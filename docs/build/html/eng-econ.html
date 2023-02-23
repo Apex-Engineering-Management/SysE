@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering Economics &mdash; SysE 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/jupyter-sphinx.css" type="text/css" />
+      <link rel="stylesheet" href="_static/thebelab.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/tooltipster.custom.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/tooltipster.bundle.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/tooltipster-sideTip-shadow.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/tooltipster-sideTip-punk.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/tooltipster-sideTip-noir.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/tooltipster-sideTip-light.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/tooltipster-sideTip-borderless.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/micromodal.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/sphinx_rtd_theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/apex-logo.svg"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script src="_static/thebelab-helper.js"></script>
+        <script src="_static/js/hoverxref.js"></script>
+        <script src="_static/js/tooltipster.bundle.min.js"></script>
+        <script src="_static/js/micromodal.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Probability &amp; Statistics" href="prob-stats.html" />
+    <link rel="prev" title="Usage" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SysE
+              <img src="_static/apex-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Engineering Economics</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="prob-stats.html">Probability &amp; Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model-quant.html">Modeling &amp; Quantitative Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eng-mgt.html">Engineering Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interest-tables.html">Interest Tables</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SysE</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Engineering Economics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/eng-econ.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="engineering-economics">
+<h1>Engineering Economics<a class="headerlink" href="#engineering-economics" title="Permalink to this heading"></a></h1>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#syse.fv" title="syse.fv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fv</span></code></a>(rate, nper, pmt, pv[, when])</p></td>
+<td><p>Compute the future value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#syse.pmt" title="syse.pmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pmt</span></code></a>(rate, nper, pv[, fv, when])</p></td>
+<td><p>Compute the payment against loan principal plus interest.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#syse.nper" title="syse.nper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nper</span></code></a>(rate, pmt, pv[, fv, when])</p></td>
+<td><p>Compute the number of periodic payments.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#syse.ipmt" title="syse.ipmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ipmt</span></code></a>(rate, per, nper, pv[, fv, when])</p></td>
+<td><p>Compute the interest portion of a payment.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#syse.ppmt" title="syse.ppmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ppmt</span></code></a>(rate, per, nper, pv[, fv, when])</p></td>
+<td><p>Compute the payment against loan principal.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#syse.pv" title="syse.pv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pv</span></code></a>(rate, nper, pmt[, fv, when])</p></td>
+<td><p>Compute the present value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#syse.rate" title="syse.rate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rate</span></code></a>(nper, pmt, pv, fv[, when, guess, tol, ...])</p></td>
+<td><p>Compute the rate of interest per period.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#syse.irr" title="syse.irr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">irr</span></code></a>(values[, guess, tol, maxiter])</p></td>
+<td><p>Return the Internal Rate of Return (IRR).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#syse.npv" title="syse.npv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">npv</span></code></a>(rate, values)</p></td>
+<td><p>Returns the NPV (Net Present Value) of a cash flow series.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#syse.mirr" title="syse.mirr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mirr</span></code></a>(values, finance_rate, reinvest_rate)</p></td>
+<td><p>Modified internal rate of return.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#syse.depreciate" title="syse.depreciate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">depreciate</span></code></a>(cost, salvage, life)</p></td>
+<td><p>Calculate the straight-line depreciation of an asset over time.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="discounted-cash-flows">
+<h2>Discounted Cash Flows<a class="headerlink" href="#discounted-cash-flows" title="Permalink to this heading"></a></h2>
+<section id="future-fv">
+<h3>Future (FV)<a class="headerlink" href="#future-fv" title="Permalink to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="syse.fv">
+<span class="sig-prename descclassname"><span class="pre">syse.</span></span><span class="sig-name descname"><span class="pre">fv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pmt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'end'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#syse.fv" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the future value.</p>
+<dl class="simple">
+<dt>Given:</dt><dd><ul class="simple">
+<li><p>a present value, <cite>pv</cite></p></li>
+<li><p>an interest <cite>rate</cite> compounded once per period, of which
+there are</p></li>
+<li><p><cite>nper</cite> total</p></li>
+<li><p>a (fixed) payment, <cite>pmt</cite>, paid either</p></li>
+<li><p>at the beginning (<cite>when</cite> = {‘begin’, 1}) or the end
+(<cite>when</cite> = {‘end’, 0}) of each period</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the value at the end of the <cite>nper</cite> periods</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>rate</strong> (<em>scalar</em><em> or </em><em>array_like</em><em> of </em><em>shape</em><em>(</em><em>M</em><em>, </em><em>)</em>) – Rate of interest as decimal (not per cent) per period</p></li>
+<li><p><strong>nper</strong> (<em>scalar</em><em> or </em><em>array_like</em><em> of </em><em>shape</em><em>(</em><em>M</em><em>, </em><em>)</em>) – Number of compounding periods</p></li>
+<li><p><strong>pmt</strong> (<em>scalar</em><em> or </em><em>array_like</em><em> of </em><em>shape</em><em>(</em><em>M</em><em>, </em><em>)</em>) – Payment</p></li>
+<li><p><strong>pv</strong> (<em>scalar</em><em> or </em><em>array_like</em><em> of </em><em>shape</em><em>(</em><em>M</em><em>, </em><em>)</em>) – Present value</p></li>
+<li><p><strong>when</strong> (<em>{{'begin'</em><em>, </em><em>1}</em><em>, </em><em>{'end'</em><em>, </em><em>0}}</em><em>, </em><em>{string</em><em>, </em><em>int}</em><em>, </em><em>optional</em>) – When payments are due (‘begin’ (1) or ‘end’ (0)).
+Defaults to {‘end’, 0}.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>out</strong> – Future values.  If all input is scalar, returns a scalar float.  If
+any input is array_like, returns future values for each input element.
+If multiple inputs are array_like, they all must have the same shape.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The future value is computed by solving the equation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fv</span> <span class="o">+</span>
+<span class="n">pv</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">rate</span><span class="p">)</span><span class="o">**</span><span class="n">nper</span> <span class="o">+</span>
+<span class="n">pmt</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span><span class="o">*</span><span class="n">when</span><span class="p">)</span><span class="o">/</span><span class="n">rate</span><span class="o">*</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span><span class="p">)</span><span class="o">**</span><span class="n">nper</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>or, when <code class="docutils literal notranslate"><span class="pre">rate</span> <span class="pre">==</span> <span class="pre">0</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fv</span> <span class="o">+</span> <span class="n">pv</span> <span class="o">+</span> <span class="n">pmt</span> <span class="o">*</span> <span class="n">nper</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<div role="list" class="citation-list">
+<div class="citation" id="wrw" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>WRW<span class="fn-bracket">]</span></span>
+<p>Wheeler, D. A., E. Rathke, and R. Weir (Eds.) (2009, May).
+Open Document Format for Office Applications (OpenDocument)v1.2,
+Part 2: Recalculated Formula (OpenFormula) Format - Annotated Version,
+Pre-Draft 12. Organization for the Advancement of Structured Information
+Standards (OASIS). Billerica, MA, USA. [ODT Document].
+Available:
+<a class="reference external" href="http://www.oasis-open.org/committees/documents.php?wg_abbrev=office-formula">http://www.oasis-open.org/committees/documents.php?wg_abbrev=office-formula</a>
+OpenDocument-formula-20090508.odt</p>
+</div>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">syse</span> <span class="k">as</span> <span class="nn">syse</span>
+</pre></div>
+</div>
+<p>What is the future value after 10 years of saving $100 now, with
+an additional monthly savings of $100.  Assume the interest rate is
+5% (annually) compounded monthly?</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">syse</span><span class="o">.</span><span class="n">fv</span><span class="p">(</span><span class="mf">0.05</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="go">15692.928894335748</span>
+</pre></div>
+</div>
+<p>By convention, the negative sign represents cash flow out (i.e. money not
+available today).  Thus, saving $100 a month at 5% annual interest leads
+to $15,692.93 available to spend in 10 years.</p>
+<p>If any input is array_like, returns an array of equal shape.  Let’s
+compare different interest rates from the example above.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">))</span><span class="o">/</span><span class="mi">12</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">syse</span><span class="o">.</span><span class="n">fv</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="go">array([ 15692.92889434,  16569.87435405,  17509.44688102]) # may vary</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="payment-pmt">
+<h3>Payment (PMT)<a class="headerlink" href="#payment-pmt" title="Permalink to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="syse.pmt">
+<span class="sig-prename descclassname"><span class="pre">syse.</span></span><span class="sig-name descname"><span class="pre">pmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'end'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#syse.pmt" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the payment against loan principal plus interest.</p>
+<dl class="simple">
+<dt>Given:</dt><dd><ul class="simple">
+<li><p>a present value, <cite>pv</cite> (e.g., an amount borrowed)</p></li>
+<li><p>a future value, <cite>fv</cite> (e.g., 0)</p></li>
+<li><p>an interest <cite>rate</cite> compounded once per period, of which
+there are</p></li>
+<li><p><cite>nper</cite> total</p></li>
+<li><p>and (optional) specification of whether payment is made
+at the beginning (<cite>when</cite> = {‘begin’, 1}) or the end
+(<cite>when</cite> = {‘end’, 0}) of each period</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the (fixed) periodic payment.</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>rate</strong> (<em>array_like</em>) – Rate of interest (per period)</p></li>
+<li><p><strong>nper</strong> (<em>array_like</em>) – Number of compounding periods</p></li>
+<li><p><strong>pv</strong> (<em>array_like</em>) – Present value</p></li>
+<li><p><strong>fv</strong> (<em>array_like</em><em>,  </em><em>optional</em>) – Future value (default = 0)</p></li>
+<li><p><strong>when</strong> (<em>{{'begin'</em><em>, </em><em>1}</em><em>, </em><em>{'end'</em><em>, </em><em>0}}</em><em>, </em><em>{string</em><em>, </em><em>int}</em>) – When payments are due (‘begin’ (1) or ‘end’ (0))</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>out</strong> – Payment against loan plus interest.  If all input is scalar, returns a
+scalar float.  If any input is array_like, returns payment for each
+input element. If multiple inputs are array_like, they all must have
+the same shape.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>ndarray</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The payment is computed by solving the equation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fv</span> <span class="o">+</span>
+<span class="n">pv</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span><span class="p">)</span><span class="o">**</span><span class="n">nper</span> <span class="o">+</span>
+<span class="n">pmt</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span><span class="o">*</span><span class="n">when</span><span class="p">)</span><span class="o">/</span><span class="n">rate</span><span class="o">*</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span><span class="p">)</span><span class="o">**</span><span class="n">nper</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>or, when <code class="docutils literal notranslate"><span class="pre">rate</span> <span class="pre">==</span> <span class="pre">0</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fv</span> <span class="o">+</span> <span class="n">pv</span> <span class="o">+</span> <span class="n">pmt</span> <span class="o">*</span> <span class="n">nper</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>for <code class="docutils literal notranslate"><span class="pre">pmt</span></code>.</p>
+<p>Note that computing a monthly mortgage payment is only
+one use for this function.  For example, pmt returns the
+periodic deposit one must make to achieve a specified
+future balance given an initial deposit, a fixed,
+periodically compounded interest rate, and the total
+number of periods.</p>
+<p class="rubric">References</p>
+<div role="list" class="citation-list">
+<div class="citation" id="id1" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>WRW<span class="fn-bracket">]</span></span>
+<p>Wheeler, D. A., E. Rathke, and R. Weir (Eds.) (2009, May).
+Open Document Format for Office Applications (OpenDocument)v1.2,
+Part 2: Recalculated Formula (OpenFormula) Format - Annotated Version,
+Pre-Draft 12. Organization for the Advancement of Structured Information
+Standards (OASIS). Billerica, MA, USA. [ODT Document].
+Available:
+<a class="reference external" href="http://www.oasis-open.org/committees/documents.php">http://www.oasis-open.org/committees/documents.php</a>
+?wg_abbrev=office-formulaOpenDocument-formula-20090508.odt</p>
+</div>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">syse</span> <span class="k">as</span> <span class="nn">syse</span>
+</pre></div>
+</div>
+<p>What is the monthly payment needed to pay off a $200,000 loan in 15
+years at an annual interest rate of 7.5%?</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sye</span><span class="o">.</span><span class="n">pmt</span><span class="p">(</span><span class="mf">0.075</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="o">*</span><span class="mi">15</span><span class="p">,</span> <span class="mi">200000</span><span class="p">)</span>
+<span class="go">-1854.0247200054619</span>
+</pre></div>
+</div>
+<p>In order to pay-off (i.e., have a future-value of 0) the $200,000 obtained
+today, a monthly payment of $1,854.02 would be required.  Note that this
+example illustrates usage of <cite>fv</cite> having a default value of 0.</p>
+</dd></dl>
+
+</section>
+<section id="number-of-periodic-payments-nper">
+<h3>Number of Periodic Payments (NPER)<a class="headerlink" href="#number-of-periodic-payments-nper" title="Permalink to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="syse.nper">
+<span class="sig-prename descclassname"><span class="pre">syse.</span></span><span class="sig-name descname"><span class="pre">nper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pmt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'end'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#syse.nper" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the number of periodic payments.</p>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">decimal.Decimal</span></code> type is not supported.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rate</strong> (<em>array_like</em>) – Rate of interest (per period)</p></li>
+<li><p><strong>pmt</strong> (<em>array_like</em>) – Payment</p></li>
+<li><p><strong>pv</strong> (<em>array_like</em>) – Present value</p></li>
+<li><p><strong>fv</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Future value</p></li>
+<li><p><strong>when</strong> (<em>{{'begin'</em><em>, </em><em>1}</em><em>, </em><em>{'end'</em><em>, </em><em>0}}</em><em>, </em><em>{string</em><em>, </em><em>int}</em><em>, </em><em>optional</em>) – When payments are due (‘begin’ (1) or ‘end’ (0))</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The number of periods <code class="docutils literal notranslate"><span class="pre">nper</span></code> is computed by solving the equation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fv</span> <span class="o">+</span> <span class="n">pv</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">rate</span><span class="p">)</span><span class="o">**</span><span class="n">nper</span> <span class="o">+</span> <span class="n">pmt</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">rate</span><span class="o">*</span><span class="n">when</span><span class="p">)</span><span class="o">/</span><span class="n">rate</span><span class="o">*</span><span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">rate</span><span class="p">)</span><span class="o">**</span><span class="n">nper</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>but if <code class="docutils literal notranslate"><span class="pre">rate</span> <span class="pre">=</span> <span class="pre">0</span></code> then:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fv</span> <span class="o">+</span> <span class="n">pv</span> <span class="o">+</span> <span class="n">pmt</span><span class="o">*</span><span class="n">nper</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">syse</span> <span class="k">as</span> <span class="nn">syse</span>
+</pre></div>
+</div>
+<p>If you only had $150/month to pay towards the loan, how long would it take
+to pay-off a loan of $8,000 at 7% annual interest?</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">syse</span><span class="o">.</span><span class="n">nper</span><span class="p">(</span><span class="mf">0.07</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">,</span> <span class="mi">8000</span><span class="p">),</span> <span class="mi">5</span><span class="p">))</span>
+<span class="go">64.07335</span>
+</pre></div>
+</div>
+<p>So, over 64 months would be required to pay off the loan.</p>
+<p>The same analysis could be done with several different interest rates
+and/or payments and/or total amounts to produce an entire table.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">syse</span><span class="o">.</span><span class="n">nper</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[</span><span class="mf">0.07</span><span class="o">/</span><span class="mi">12</span><span class="p">:</span> <span class="mf">0.08</span><span class="o">/</span><span class="mi">12</span><span class="p">:</span> <span class="mf">0.01</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span>
+<span class="gp">... </span>                    <span class="o">-</span><span class="mi">150</span>   <span class="p">:</span> <span class="o">-</span><span class="mi">99</span>    <span class="p">:</span> <span class="mi">50</span>    <span class="p">,</span>
+<span class="gp">... </span>                    <span class="mi">8000</span>   <span class="p">:</span> <span class="mi">9001</span>   <span class="p">:</span> <span class="mi">1000</span><span class="p">]))</span>
+<span class="go">array([[[ 64.07334877,  74.06368256],</span>
+<span class="go">        [108.07548412, 127.99022654]],</span>
+<span class="go">       [[ 66.12443902,  76.87897353],</span>
+<span class="go">        [114.70165583, 137.90124779]]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="interest-portion-of-payment-ipmt">
+<h3>Interest Portion of Payment (IPMT)<a class="headerlink" href="#interest-portion-of-payment-ipmt" title="Permalink to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="syse.ipmt">
+<span class="sig-prename descclassname"><span class="pre">syse.</span></span><span class="sig-name descname"><span class="pre">ipmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'end'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#syse.ipmt" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the interest portion of a payment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rate</strong> (<em>scalar</em><em> or </em><em>array_like</em><em> of </em><em>shape</em><em>(</em><em>M</em><em>, </em><em>)</em>) – Rate of interest as decimal (not per cent) per period</p></li>
+<li><p><strong>per</strong> (<em>scalar</em><em> or </em><em>array_like</em><em> of </em><em>shape</em><em>(</em><em>M</em><em>, </em><em>)</em>) – Interest paid against the loan changes during the life or the loan.
+The <cite>per</cite> is the payment period to calculate the interest amount.</p></li>
+<li><p><strong>nper</strong> (<em>scalar</em><em> or </em><em>array_like</em><em> of </em><em>shape</em><em>(</em><em>M</em><em>, </em><em>)</em>) – Number of compounding periods</p></li>
+<li><p><strong>pv</strong> (<em>scalar</em><em> or </em><em>array_like</em><em> of </em><em>shape</em><em>(</em><em>M</em><em>, </em><em>)</em>) – Present value</p></li>
+<li><p><strong>fv</strong> (<em>scalar</em><em> or </em><em>array_like</em><em> of </em><em>shape</em><em>(</em><em>M</em><em>, </em><em>)</em><em>, </em><em>optional</em>) – Future value</p></li>
+<li><p><strong>when</strong> (<em>{{'begin'</em><em>, </em><em>1}</em><em>, </em><em>{'end'</em><em>, </em><em>0}}</em><em>, </em><em>{string</em><em>, </em><em>int}</em><em>, </em><em>optional</em>) – When payments are due (‘begin’ (1) or ‘end’ (0)).
+Defaults to {‘end’, 0}.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>out</strong> – Interest portion of payment.  If all input is scalar, returns a scalar
+float.  If any input is array_like, returns interest payment for each
+input element. If multiple inputs are array_like, they all must have
+the same shape.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#syse.ppmt" title="syse.ppmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ppmt</span></code></a>, <a class="reference internal" href="#syse.pmt" title="syse.pmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pmt</span></code></a>, <a class="reference internal" href="#syse.pv" title="syse.pv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pv</span></code></a></p>
+</div>
+<p class="rubric">Notes</p>
+<p>The total payment is made up of payment against principal plus interest.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pmt</span> <span class="pre">=</span> <span class="pre">ppmt</span> <span class="pre">+</span> <span class="pre">ipmt</span></code></p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">syse</span> <span class="k">as</span> <span class="nn">syse</span>
+</pre></div>
+</div>
+<p>What is the amortization schedule for a 1 year loan of $2500 at
+8.24% interest per year compounded monthly?</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">principal</span> <span class="o">=</span> <span class="mf">2500.00</span>
+</pre></div>
+</div>
+<p>The ‘per’ variable represents the periods of the loan.  Remember that
+financial equations start the period count at 1!</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">per</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ipmt</span> <span class="o">=</span> <span class="n">syse</span><span class="o">.</span><span class="n">ipmt</span><span class="p">(</span><span class="mf">0.0824</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">per</span><span class="p">,</span> <span class="mi">1</span><span class="o">*</span><span class="mi">12</span><span class="p">,</span> <span class="n">principal</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ppmt</span> <span class="o">=</span> <span class="n">syse</span><span class="o">.</span><span class="n">ppmt</span><span class="p">(</span><span class="mf">0.0824</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">per</span><span class="p">,</span> <span class="mi">1</span><span class="o">*</span><span class="mi">12</span><span class="p">,</span> <span class="n">principal</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Each element of the sum of the ‘ipmt’ and ‘ppmt’ arrays should equal
+‘pmt’.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pmt</span> <span class="o">=</span> <span class="n">syse</span><span class="o">.</span><span class="n">pmt</span><span class="p">(</span><span class="mf">0.0824</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="o">*</span><span class="mi">12</span><span class="p">,</span> <span class="n">principal</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">ipmt</span> <span class="o">+</span> <span class="n">ppmt</span><span class="p">,</span> <span class="n">pmt</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0:2d}</span><span class="s1"> </span><span class="si">{1:8.2f}</span><span class="s1"> </span><span class="si">{2:8.2f}</span><span class="s1"> </span><span class="si">{3:8.2f}</span><span class="s1">&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">payment</span> <span class="ow">in</span> <span class="n">per</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">index</span> <span class="o">=</span> <span class="n">payment</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="gp">... </span>    <span class="n">principal</span> <span class="o">=</span> <span class="n">principal</span> <span class="o">+</span> <span class="n">ppmt</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">payment</span><span class="p">,</span> <span class="n">ppmt</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">ipmt</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">principal</span><span class="p">))</span>
+<span class="go"> 1  -200.58   -17.17  2299.42</span>
+<span class="go"> 2  -201.96   -15.79  2097.46</span>
+<span class="go"> 3  -203.35   -14.40  1894.11</span>
+<span class="go"> 4  -204.74   -13.01  1689.37</span>
+<span class="go"> 5  -206.15   -11.60  1483.22</span>
+<span class="go"> 6  -207.56   -10.18  1275.66</span>
+<span class="go"> 7  -208.99    -8.76  1066.67</span>
+<span class="go"> 8  -210.42    -7.32   856.25</span>
+<span class="go"> 9  -211.87    -5.88   644.38</span>
+<span class="go">10  -213.32    -4.42   431.05</span>
+<span class="go">11  -214.79    -2.96   216.26</span>
+<span class="go">12  -216.26    -1.49    -0.00</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">interestpd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ipmt</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">interestpd</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">-112.98</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="payment-against-loan-principal-ppmt">
+<h3>Payment Against Loan Principal (PPMT)<a class="headerlink" href="#payment-against-loan-principal-ppmt" title="Permalink to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="syse.ppmt">
+<span class="sig-prename descclassname"><span class="pre">syse.</span></span><span class="sig-name descname"><span class="pre">ppmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'end'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#syse.ppmt" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the payment against loan principal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rate</strong> (<em>array_like</em>) – Rate of interest (per period)</p></li>
+<li><p><strong>per</strong> (<em>array_like</em><em>, </em><em>int</em>) – Amount paid against the loan changes.  The <cite>per</cite> is the period of
+interest.</p></li>
+<li><p><strong>nper</strong> (<em>array_like</em>) – Number of compounding periods</p></li>
+<li><p><strong>pv</strong> (<em>array_like</em>) – Present value</p></li>
+<li><p><strong>fv</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Future value</p></li>
+<li><p><strong>when</strong> (<em>{{'begin'</em><em>, </em><em>1}</em><em>, </em><em>{'end'</em><em>, </em><em>0}}</em><em>, </em><em>{string</em><em>, </em><em>int}</em>) – When payments are due (‘begin’ (1) or ‘end’ (0))</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#syse.pmt" title="syse.pmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pmt</span></code></a>, <a class="reference internal" href="#syse.pv" title="syse.pv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pv</span></code></a>, <a class="reference internal" href="#syse.ipmt" title="syse.ipmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ipmt</span></code></a></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="present-value-pv">
+<h3>Present Value (PV)<a class="headerlink" href="#present-value-pv" title="Permalink to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="syse.pv">
+<span class="sig-prename descclassname"><span class="pre">syse.</span></span><span class="sig-name descname"><span class="pre">pv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pmt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'end'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#syse.pv" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the present value.</p>
+<dl class="simple">
+<dt>Given:</dt><dd><ul class="simple">
+<li><p>a future value, <cite>fv</cite></p></li>
+<li><p>an interest <cite>rate</cite> compounded once per period, of which
+there are</p></li>
+<li><p><cite>nper</cite> total</p></li>
+<li><p>a (fixed) payment, <cite>pmt</cite>, paid either</p></li>
+<li><p>at the beginning (<cite>when</cite> = {‘begin’, 1}) or the end
+(<cite>when</cite> = {‘end’, 0}) of each period</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the value now</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>rate</strong> (<em>array_like</em>) – Rate of interest (per period)</p></li>
+<li><p><strong>nper</strong> (<em>array_like</em>) – Number of compounding periods</p></li>
+<li><p><strong>pmt</strong> (<em>array_like</em>) – Payment</p></li>
+<li><p><strong>fv</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Future value</p></li>
+<li><p><strong>when</strong> (<em>{{'begin'</em><em>, </em><em>1}</em><em>, </em><em>{'end'</em><em>, </em><em>0}}</em><em>, </em><em>{string</em><em>, </em><em>int}</em><em>, </em><em>optional</em>) – When payments are due (‘begin’ (1) or ‘end’ (0))</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>out</strong> – Present value of a series of payments or investments.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>ndarray, float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The present value is computed by solving the equation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fv</span> <span class="o">+</span>
+<span class="n">pv</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span><span class="p">)</span><span class="o">**</span><span class="n">nper</span> <span class="o">+</span>
+<span class="n">pmt</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span><span class="o">*</span><span class="n">when</span><span class="p">)</span><span class="o">/</span><span class="n">rate</span><span class="o">*</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span><span class="p">)</span><span class="o">**</span><span class="n">nper</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>or, when <code class="docutils literal notranslate"><span class="pre">rate</span> <span class="pre">=</span> <span class="pre">0</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fv</span> <span class="o">+</span> <span class="n">pv</span> <span class="o">+</span> <span class="n">pmt</span> <span class="o">*</span> <span class="n">nper</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>for <cite>pv</cite>, which is then returned.</p>
+<p class="rubric">References</p>
+<div role="list" class="citation-list">
+<div class="citation" id="id2" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>WRW<span class="fn-bracket">]</span></span>
+<p>Wheeler, D. A., E. Rathke, and R. Weir (Eds.) (2009, May).
+Open Document Format for Office Applications (OpenDocument)v1.2,
+Part 2: Recalculated Formula (OpenFormula) Format - Annotated Version,
+Pre-Draft 12. Organization for the Advancement of Structured Information
+Standards (OASIS). Billerica, MA, USA. [ODT Document].
+Available:
+<a class="reference external" href="http://www.oasis-open.org/committees/documents.php?wg_abbrev=office-formula">http://www.oasis-open.org/committees/documents.php?wg_abbrev=office-formula</a>
+OpenDocument-formula-20090508.odt</p>
+</div>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">syse</span> <span class="k">as</span> <span class="nn">syse</span>
+</pre></div>
+</div>
+<p>What is the present value (e.g., the initial investment)
+of an investment that needs to total $15692.93
+after 10 years of saving $100 every month?  Assume the
+interest rate is 5% (annually) compounded monthly.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">syse</span><span class="o">.</span><span class="n">pv</span><span class="p">(</span><span class="mf">0.05</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mf">15692.93</span><span class="p">)</span>
+<span class="go">-100.00067131625819</span>
+</pre></div>
+</div>
+<p>By convention, the negative sign represents cash flow out
+(i.e., money not available today).  Thus, to end up with
+$15,692.93 in 10 years saving $100 a month at 5% annual
+interest, one’s initial deposit should also be $100.</p>
+<p>If any input is array_like, <code class="docutils literal notranslate"><span class="pre">pv</span></code> returns an array of equal shape.
+Let’s compare different interest rates in the example above:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">))</span><span class="o">/</span><span class="mi">12</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">syse</span><span class="o">.</span><span class="n">pv</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">10</span><span class="o">*</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mf">15692.93</span><span class="p">)</span>
+<span class="go">array([ -100.00067132,  -649.26771385, -1273.78633713]) # may vary</span>
+</pre></div>
+</div>
+<p>So, to end up with the same $15692.93 under the same $100 per month
+“savings plan,” for annual interest rates of 4% and 3%, one would
+need initial investments of $649.27 and $1273.79, respectively.</p>
+</dd></dl>
+
+</section>
+<section id="rate-of-interest-rate">
+<h3>Rate of Interest (RATE)<a class="headerlink" href="#rate-of-interest-rate" title="Permalink to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="syse.rate">
+<span class="sig-prename descclassname"><span class="pre">syse.</span></span><span class="sig-name descname"><span class="pre">rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pmt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">when</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'end'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#syse.rate" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the rate of interest per period.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nper</strong> (<em>array_like</em>) – Number of compounding periods</p></li>
+<li><p><strong>pmt</strong> (<em>array_like</em>) – Payment</p></li>
+<li><p><strong>pv</strong> (<em>array_like</em>) – Present value</p></li>
+<li><p><strong>fv</strong> (<em>array_like</em>) – Future value</p></li>
+<li><p><strong>when</strong> (<em>{{'begin'</em><em>, </em><em>1}</em><em>, </em><em>{'end'</em><em>, </em><em>0}}</em><em>, </em><em>{string</em><em>, </em><em>int}</em><em>, </em><em>optional</em>) – When payments are due (‘begin’ (1) or ‘end’ (0))</p></li>
+<li><p><strong>guess</strong> (<em>Number</em><em>, </em><em>optional</em>) – Starting guess for solving the rate of interest, default 0.1</p></li>
+<li><p><strong>tol</strong> (<em>Number</em><em>, </em><em>optional</em>) – Required tolerance for the solution, default 1e-6</p></li>
+<li><p><strong>maxiter</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum iterations in finding the solution</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The rate of interest is computed by iteratively solving the
+(non-linear) equation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fv</span> <span class="o">+</span> <span class="n">pv</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">rate</span><span class="p">)</span><span class="o">**</span><span class="n">nper</span> <span class="o">+</span> <span class="n">pmt</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">rate</span><span class="o">*</span><span class="n">when</span><span class="p">)</span><span class="o">/</span><span class="n">rate</span> <span class="o">*</span> <span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">rate</span><span class="p">)</span><span class="o">**</span><span class="n">nper</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>for <code class="docutils literal notranslate"><span class="pre">rate</span></code>.</p>
+<p class="rubric">References</p>
+<p>Wheeler, D. A., E. Rathke, and R. Weir (Eds.) (2009, May). Open Document
+Format for Office Applications (OpenDocument)v1.2, Part 2: Recalculated
+Formula (OpenFormula) Format - Annotated Version, Pre-Draft 12.
+Organization for the Advancement of Structured Information Standards
+(OASIS). Billerica, MA, USA. [ODT Document]. Available:
+<a class="reference external" href="http://www.oasis-open.org/committees/documents.php?wg_abbrev=office-formula">http://www.oasis-open.org/committees/documents.php?wg_abbrev=office-formula</a>
+OpenDocument-formula-20090508.odt</p>
+</dd></dl>
+
+</section>
+<section id="internal-rate-of-return-irr">
+<h3>Internal Rate of Return (IRR)<a class="headerlink" href="#internal-rate-of-return-irr" title="Permalink to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="syse.irr">
+<span class="sig-prename descclassname"><span class="pre">syse.</span></span><span class="sig-name descname"><span class="pre">irr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#syse.irr" title="Permalink to this definition"></a></dt>
+<dd><p>Return the Internal Rate of Return (IRR).</p>
+<p>This is the “average” periodically compounded rate of return
+that gives a net present value of 0.0; for a more complete explanation,
+see Notes below.</p>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">decimal.Decimal</span></code> type is not supported.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>array_like</em><em>, </em><em>shape</em><em>(</em><em>N</em><em>,</em><em>)</em>) – Input cash flows per time period.  By convention, net “deposits”
+are negative and net “withdrawals” are positive.  Thus, for
+example, at least the first element of <cite>values</cite>, which represents
+the initial investment, will typically be negative.</p></li>
+<li><p><strong>guess</strong> (<em>float</em><em>, </em><em>optional</em>) – Initial guess of the IRR for the iterative solver. If no guess is
+given an initial guess of 0.1 (i.e. 10%) is assumed instead.</p></li>
+<li><p><strong>tol</strong> (<em>float</em><em>, </em><em>optional</em>) – Required tolerance to accept solution. Default is 1e-12.</p></li>
+<li><p><strong>maxiter</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum iterations to perform in finding a solution. Default is 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>out</strong> – Internal Rate of Return for periodic input values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The IRR is perhaps best understood through an example (illustrated
+using np.irr in the Examples section below). Suppose one invests 100
+units and then makes the following withdrawals at regular (fixed)
+intervals: 39, 59, 55, 20.  Assuming the ending value is 0, one’s 100
+unit investment yields 173 units; however, due to the combination of
+compounding and the periodic withdrawals, the “average” rate of return
+is neither simply 0.73/4 nor (1.73)^0.25-1.  Rather, it is the solution
+(for <span class="math">r</span>) of the equation:</p>
+<div class="math">
+<p><span class="math">-100 + \frac{39}{1+r} + \frac{59}{(1+r)^2} + \frac{55}{(1+r)^3} + \frac{20}{(1+r)^4} = 0</span></p>
+</div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="o">-</span><span class="mi">100</span> <span class="o">+</span> <span class="p">(</span><span class="mi">39</span><span class="o">/</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>In general, for <cite>values</cite> <span class="math">= [v_0, v_1, ... v_M]</span>,
+irr is the solution of the equation: <a class="reference internal" href="#id5" id="id3"><span>[G]</span></a></p>
+<div class="math">
+<p><span class="math">\sum_{t=0}^M{\frac{v_t}{(1+irr)^{t}}} = 0</span></p>
+</div><p class="rubric">References</p>
+<div role="list" class="citation-list">
+<div class="citation" id="g" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>G<span class="fn-bracket">]</span></span>
+<p>L. J. Gitman, “Principles of Managerial Finance, Brief,” 3rd ed.,
+Addison-Wesley, 2003, pg. 348.</p>
+</div>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">syse</span> <span class="k">as</span> <span class="nn">syse</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">syse</span><span class="o">.</span><span class="n">irr</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">20</span><span class="p">]),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">0.28095</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">syse</span><span class="o">.</span><span class="n">irr</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">74</span><span class="p">]),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">-0.0955</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">syse</span><span class="o">.</span><span class="n">irr</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">]),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">-0.0833</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">syse</span><span class="o">.</span><span class="n">irr</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">]),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">0.06206</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">syse</span><span class="o">.</span><span class="n">irr</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">0.0886</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="net-present-value-npv">
+<h3>Net Present Value (NPV)<a class="headerlink" href="#net-present-value-npv" title="Permalink to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="syse.npv">
+<span class="sig-prename descclassname"><span class="pre">syse.</span></span><span class="sig-name descname"><span class="pre">npv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#syse.npv" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the NPV (Net Present Value) of a cash flow series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rate</strong> (<em>scalar</em>) – The discount rate.</p></li>
+<li><p><strong>values</strong> (<em>array_like</em><em>, </em><em>shape</em><em>(</em><em>M</em><em>, </em><em>)</em>) – The values of the time series of cash flows.  The (fixed) time
+interval between cash flow “events” must be the same as that for
+which <cite>rate</cite> is given (i.e., if <cite>rate</cite> is per year, then precisely
+a year is understood to elapse between each cash flow event).  By
+convention, investments or “deposits” are negative, income or
+“withdrawals” are positive; <cite>values</cite> must begin with the initial
+investment, thus <cite>values[0]</cite> will typically be negative.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>out</strong> – The NPV of the input cash flow series <cite>values</cite> at the discount
+<cite>rate</cite>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">npv</span></code> considers a series of cashflows starting in the present (t = 0).
+NPV can also be defined with a series of future cashflows, paid at the
+end, rather than the start, of each period. If future cashflows are used,
+the first cashflow <cite>values[0]</cite> must be zeroed and added to the net
+present value of the future cashflows. This is demonstrated in the
+examples.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>Returns the result of: <a class="reference internal" href="#id5" id="id4"><span>[G]</span></a></p>
+<div class="math">
+<p><span class="math">\sum_{t=0}^{M-1}{\frac{values_t}{(1+rate)^{t}}}</span></p>
+</div><p class="rubric">References</p>
+<div role="list" class="citation-list">
+<div class="citation" id="id5" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>G<span class="fn-bracket">]</span></span>
+<p>L. J. Gitman, “Principles of Managerial Finance, Brief,” 3rd ed.,
+Addison-Wesley, 2003, pg. 346.</p>
+</div>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">syse</span> <span class="k">as</span> <span class="nn">syse</span>
+</pre></div>
+</div>
+<p>Consider a potential project with an initial investment of $40 000 and
+projected cashflows of $5 000, $8 000, $12 000 and $30 000 at the end of
+each period discounted at a rate of 8% per period. To find the project’s
+net present value:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rate</span><span class="p">,</span> <span class="n">cashflows</span> <span class="o">=</span> <span class="mf">0.08</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">40_000</span><span class="p">,</span> <span class="mi">5_000</span><span class="p">,</span> <span class="mi">8_000</span><span class="p">,</span> <span class="mi">12_000</span><span class="p">,</span> <span class="mi">30_000</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">syse</span><span class="o">.</span><span class="n">npv</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">cashflows</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">3065.22267</span>
+</pre></div>
+</div>
+<p>It may be preferable to split the projected cashflow into an initial
+investment and expected future cashflows. In this case, the value of
+the initial cashflow is zero and the initial investment is later added
+to the future cashflows net present value:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">initial_cashflow</span> <span class="o">=</span> <span class="n">cashflows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cashflows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">syse</span><span class="o">.</span><span class="n">npv</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">cashflows</span><span class="p">)</span> <span class="o">+</span> <span class="n">initial_cashflow</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">3065.22267</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="modified-internal-rate-of-return-mirr">
+<h3>Modified Internal Rate of Return (MIRR)<a class="headerlink" href="#modified-internal-rate-of-return-mirr" title="Permalink to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="syse.mirr">
+<span class="sig-prename descclassname"><span class="pre">syse.</span></span><span class="sig-name descname"><span class="pre">mirr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finance_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reinvest_rate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#syse.mirr" title="Permalink to this definition"></a></dt>
+<dd><p>Modified internal rate of return.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>array_like</em>) – Cash flows (must contain at least one positive and one negative
+value) or nan is returned.  The first value is considered a sunk
+cost at time zero.</p></li>
+<li><p><strong>finance_rate</strong> (<em>scalar</em>) – Interest rate paid on the cash flows</p></li>
+<li><p><strong>reinvest_rate</strong> (<em>scalar</em>) – Interest rate received on the cash flows upon reinvestment</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>out</strong> – Modified internal rate of return</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="evaluation-of-alternatives">
+<h2>Evaluation of Alternatives<a class="headerlink" href="#evaluation-of-alternatives" title="Permalink to this heading"></a></h2>
+</section>
+<section id="cost-analyses">
+<h2>Cost Analyses<a class="headerlink" href="#cost-analyses" title="Permalink to this heading"></a></h2>
+</section>
+<section id="depreciation-taxes">
+<h2>Depreciation &amp; Taxes<a class="headerlink" href="#depreciation-taxes" title="Permalink to this heading"></a></h2>
+<p>Depreciation is a non-cash expense that represents the need to replace assets eventually as they wear out.
+Different types of assets have different rates at which they lose value.
+This decline in value is not always linear, because some assets lose value faster earlier in their life,
+and some assets hold most of their value early but then lose value faster later on. Some assets have residual value at
+the end of their useful life, called salvage value.</p>
+<p>Unless otherwise stated, the fiscal year for a company is the calendar year.</p>
+<p>The useful life of the asset is estimated to be N years. The depreciation amount in the first year is adjusted if the
+asset is purchased in the middle of the year.</p>
+<p>The Book Value for year t is BVt , and it can not be less than the Salvage Value S.</p>
+<section id="straight-line-depreciation">
+<h3>Straight-Line Depreciation<a class="headerlink" href="#straight-line-depreciation" title="Permalink to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="syse.depreciate">
+<span class="sig-prename descclassname"><span class="pre">syse.</span></span><span class="sig-name descname"><span class="pre">depreciate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cost</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salvage</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">life</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#syse.depreciate" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the straight-line depreciation of an asset over time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cost</strong> – initial cost of the asset</p></li>
+<li><p><strong>salvage</strong> – salvage value of the asset at the end of its useful life</p></li>
+<li><p><strong>n</strong> – life of the asset in years</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>depreciation amount</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The depreciation amount for each full year is the same amount: the original value of the asset B minus the
+salvage value S all divided by the number of years N:</p>
+<p class="rubric">Examples</p>
+<p>A company purchased a machine for $100,000 with an estimated salvage value of $10,000 after 5 years.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cost</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">salvage</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">life</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">syse</span><span class="o">.</span><span class="n">depreciate</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span> <span class="n">salvage</span><span class="p">,</span> <span class="n">life</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>The straight-line depreciation for the machine is $18000.0 per year.
+</pre></div>
+</div>
+</div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="prob-stats.html" class="btn btn-neutral float-right" title="Probability &amp; Statistics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Apexpromgt.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
