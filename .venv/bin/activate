@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/apexpromgt/PycharmProjects/SysE-Docs/.venv"
+VIRTUAL_ENV="E:\PyCharm-Projects\SysE-Docs\.venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

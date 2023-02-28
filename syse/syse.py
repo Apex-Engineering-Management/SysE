@@ -38,7 +38,9 @@ def _convert_when(when):
     except (KeyError, TypeError):
         return [_when_to_num[x] for x in when]
 
-## Engineering Economics
+
+# Engineering Economics
+
 
 # Future Value (FV)
 def fv(rate, nper, pmt, pv, when='end'):
@@ -148,6 +150,7 @@ def fv(rate, nper, pmt, pv, when='end'):
         return fv_array.item(0)
     return fv_array
 
+
 # Payment Against Loan Principal Plus Interest
 def pmt(rate, nper, pv, fv=0, when='end'):
     """
@@ -243,6 +246,7 @@ def pmt(rate, nper, pv, fv=0, when='end'):
                     (1 + masked_rate*when)*(temp - 1)/masked_rate)
     return -(fv + pv*temp) / fact
 
+
 # Number of Periodic Payments
 def nper(rate, pmt, pv, fv=0, when='end'):
     """
@@ -326,6 +330,7 @@ def _value_like(arr, value):
         return Decimal(value)
     else:
         return np.array(value, dtype=arr.dtype).item(0)
+
 
 # Interest Portion of Payment
 def ipmt(rate, per, nper, pv, fv=0, when='end'):
@@ -450,6 +455,7 @@ def _rbl(rate, per, pmt, pv, when):
     """
     return fv(rate, (per - 1), pmt, pv, when)
 
+
 # Payment Against Loan Principal
 def ppmt(rate, per, nper, pv, fv=0, when='end'):
     """
@@ -478,6 +484,7 @@ def ppmt(rate, per, nper, pv, fv=0, when='end'):
     """
     total = pmt(rate, nper, pv, fv, when)
     return total - ipmt(rate, per, nper, pv, fv, when)
+
 
 # Present Value
 def pv(rate, nper, pmt, fv=0, when='end'):
@@ -601,6 +608,7 @@ def _g_div_gp(r, n, p, x, y, w):
 #  g(r) is the formula
 #  g'(r) is the derivative with respect to r.
 
+
 # Rate of Interest
 def rate(nper, pmt, pv, fv, when='end', guess=None, tol=None, maxiter=100):
     """
@@ -676,6 +684,7 @@ def rate(nper, pmt, pv, fv, when='end', guess=None, tol=None, maxiter=100):
             # where the solution is not close to tol.
             rn[~close] = np.nan
     return rn
+
 
 # Internal Rate of Return (IRR)
 def irr(values, guess=0.1, tol=1e-12, maxiter=100):
@@ -776,8 +785,8 @@ def irr(values, guess=0.1, tol=1e-12, maxiter=100):
     # by letting x = 1 / (1+eirr), we substitute to get
     #
     # NPV = V0 * x^0   + V1 * x^1   +  V2 * x^2  +  V3 * x^3  + ...
-    # 
-    # which we solve using Newton-Raphson and then reverse out the solution 
+    #
+    # which we solve using Newton-Raphson and then reverse out the solution
     # as eirr = 1/x - 1 (if we are close enough to a solution)
     npv_ = np.polynomial.Polynomial(values)
     d_npv = npv_.deriv()
@@ -790,6 +799,7 @@ def irr(values, guess=0.1, tol=1e-12, maxiter=100):
         x = x_new
 
     return np.nan
+
 
 # Net Present Value (NPV)
 def npv(rate, values):
@@ -870,6 +880,7 @@ def npv(rate, values):
         # Otherwise, return entire array
         return npv
 
+
 # Modified Internal Rate of Return
 def mirr(values, finance_rate, reinvest_rate):
     """
@@ -910,6 +921,7 @@ def mirr(values, finance_rate, reinvest_rate):
     return (numer/denom)**(1/(n - 1))*(1 + reinvest_rate) - 1
 
 # Depreciation & Taxes
+
 
 # Straight-Line Depreciation
 def depreciate(cost, salvage, life):
@@ -952,6 +964,62 @@ def depreciate(cost, salvage, life):
 
 
 # Probability & Statistics
+
+
+# Simple Moving Average
+def sma(data, n):
+    """
+    Calculate the simple moving average of a list of data points for the most recent n periods.
+
+    Parameters:
+        data (list): A list of data points.
+        n (int): The number of most recent observations to be used.
+
+    Returns:
+        float: The simple moving average.
+
+    Examples
+    --------
+    Suppose you are the owner of a retail store and you want to analyze the sales performance of your store for the
+    last 10 days. You have a list of the daily sales figures for the past 10 days. You can use the above Python
+    function to calculate the simple moving average of the sales figures over the past 10 days to get an idea of the
+    store's overall sales trend. This information can be useful in determining whether you need to adjust your
+    inventory or marketing strategies to improve sales.
+
+    """
+    if len(data) < n:
+        return None
+    else:
+        return sum(data[-n:]) / n
+
+
+# Weighted Moving Average
+def wma(data, weights):
+    """
+    Calculate the weighted moving average of a list of data points using a list of weights.
+
+    Parameters:
+        data (list): A list of data points.
+        weights (list): A list of weights to be applied to each data point.
+
+    Returns:
+        float: The weighted moving average.
+
+    Examples:
+        Suppose you are a financial analyst and you want to analyze the stock price of a company over the
+        past 5 days. You have a list of the daily closing prices for the past 5 days, and you believe that the
+        most recent day's price should be given a higher weight than the previous days. You can use the above
+        Python function to calculate the weighted moving average of the stock prices over the past 5 days,
+        where the weight of the most recent day's price is 0.5 and the weights of the previous days are 0.3, 0.1,
+        and 0.1 respectively. This information can be useful in determining whether the stock price is trending up or
+        down and making investment decisions accordingly.
+
+    """
+    if len(data) != len(weights):
+        return None
+    else:
+        return sum([data[i] * weights[i] for i in range(len(data))]) / sum(weights)
+
 
 # Normal Distribution
 def norm():
@@ -1012,6 +1080,7 @@ def line(x, y):
     return (slope, intercept)
 
 # Modeling & Quantitative Analysis
+
 
 # Maximize - Linear Programming
 def linear_pro(costs, budget):

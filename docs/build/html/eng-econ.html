@@ -674,16 +674,16 @@ intervals: 39, 59, 55, 20.  Assuming the ending value is 0, one’s 100
 unit investment yields 173 units; however, due to the combination of
 compounding and the periodic withdrawals, the “average” rate of return
 is neither simply 0.73/4 nor (1.73)^0.25-1.  Rather, it is the solution
-(for <span class="math">r</span>) of the equation:</p>
+(for <img class="math" src="_images/math/79a3d439d28652c547386f39b555d90d3aaf102d.png" alt="r"/>) of the equation:</p>
 <div class="math">
-<p><span class="math">-100 + \frac{39}{1+r} + \frac{59}{(1+r)^2} + \frac{55}{(1+r)^3} + \frac{20}{(1+r)^4} = 0</span></p>
+<p><img src="_images/math/44cd2cc2e9fdd56c5a60e16a782b52e1008b51fa.png" alt="-100 + \frac{39}{1+r} + \frac{59}{(1+r)^2} + \frac{55}{(1+r)^3} + \frac{20}{(1+r)^4} = 0"/></p>
 </div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="o">-</span><span class="mi">100</span> <span class="o">+</span> <span class="p">(</span><span class="mi">39</span><span class="o">/</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
 </div>
-<p>In general, for <cite>values</cite> <span class="math">= [v_0, v_1, ... v_M]</span>,
+<p>In general, for <cite>values</cite> <img class="math" src="_images/math/fafb6fc7385badc5a645cf8e265d3527362d28f6.png" alt="= [v_0, v_1, ... v_M]"/>,
 irr is the solution of the equation: <a class="reference internal" href="#id5" id="id3"><span>[G]</span></a></p>
 <div class="math">
-<p><span class="math">\sum_{t=0}^M{\frac{v_t}{(1+irr)^{t}}} = 0</span></p>
+<p><img src="_images/math/87f07f16060e4229d08f41accafc809b62a74c86.png" alt="\sum_{t=0}^M{\frac{v_t}{(1+irr)^{t}}} = 0"/></p>
 </div><p class="rubric">References</p>
 <div role="list" class="citation-list">
 <div class="citation" id="g" role="doc-biblioentry">
@@ -752,7 +752,7 @@ examples.</p>
 <p class="rubric">Notes</p>
 <p>Returns the result of: <a class="reference internal" href="#id5" id="id4"><span>[G]</span></a></p>
 <div class="math">
-<p><span class="math">\sum_{t=0}^{M-1}{\frac{values_t}{(1+rate)^{t}}}</span></p>
+<p><img src="_images/math/efda392f70a68f8628c59861bca01d798260c1b1.png" alt="\sum_{t=0}^{M-1}{\frac{values_t}{(1+rate)^{t}}}"/></p>
 </div><p class="rubric">References</p>
 <div role="list" class="citation-list">
 <div class="citation" id="id5" role="doc-biblioentry">
