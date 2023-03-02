@@ -18,7 +18,7 @@ Some use cases include:
 -
 
 
-To get started, check out the :doc:`usage` section.
+To get started, check out the :doc:`installation` section.
 
 .. note::
 
@@ -27,15 +27,15 @@ To get started, check out the :doc:`usage` section.
 .. currentmodule:: syse
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
    :caption: Contents
    :titlesonly:
 
-   usage
-   eng-econ
-   prob-stats
-   model-quant
-   eng-mgt
+   usage/index
+   eng-econ/index
+   prob-stats/index
+   model-quant/index
+   eng-mgt/index
    interest-tables
 
 Indices & Tables

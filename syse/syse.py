@@ -14,6 +14,8 @@ from __future__ import division, absolute_import, print_function
 
 from decimal import Decimal
 
+import math
+
 import numpy as np
 
 
@@ -80,51 +82,45 @@ def fv(rate, nper, pmt, pv, when='end'):
         any input is array_like, returns future values for each input element.
         If multiple inputs are array_like, they all must have the same shape.
 
-    Notes
-    -----
-    The future value is computed by solving the equation::
 
-     fv +
-     pv*(1+rate)**nper +
-     pmt*(1 + rate*when)/rate*((1 + rate)**nper - 1) == 0
+    .. Note::
 
-    or, when ``rate == 0``::
+        The future value is computed by solving the equation::
 
-     fv + pv + pmt * nper == 0
+            fv +
+            pv*(1+rate)**nper +
+            pmt*(1 + rate*when)/rate*((1 + rate)**nper - 1) == 0
 
-    References
-    ----------
-    .. [WRW] Wheeler, D. A., E. Rathke, and R. Weir (Eds.) (2009, May).
-       Open Document Format for Office Applications (OpenDocument)v1.2,
-       Part 2: Recalculated Formula (OpenFormula) Format - Annotated Version,
-       Pre-Draft 12. Organization for the Advancement of Structured Information
-       Standards (OASIS). Billerica, MA, USA. [ODT Document].
-       Available:
-       http://www.oasis-open.org/committees/documents.php?wg_abbrev=office-formula
-       OpenDocument-formula-20090508.odt
+        or, when ``rate == 0``::
+
+            fv + pv + pmt * nper == 0
+
 
     Examples
     --------
-    >>> import numpy as np
-    >>> import syse as syse
 
     What is the future value after 10 years of saving $100 now, with
     an additional monthly savings of $100.  Assume the interest rate is
     5% (annually) compounded monthly?
 
-    >>> syse.fv(0.05/12, 10*12, -100, -100)
-    15692.928894335748
+    ::
+
+        import numpy as np
+        import syse as syse
+
+        syse.fv(0.05/12, 10*12, -100, -100)
+        15692.928894335748
 
     By convention, the negative sign represents cash flow out (i.e. money not
     available today).  Thus, saving $100 a month at 5% annual interest leads
     to $15,692.93 available to spend in 10 years.
 
     If any input is array_like, returns an array of equal shape.  Let's
-    compare different interest rates from the example above.
+    compare different interest rates from the example above::
 
-    >>> a = np.array((0.05, 0.06, 0.07))/12
-    >>> syse.fv(a, 10*12, -100, -100)
-    array([ 15692.92889434,  16569.87435405,  17509.44688102]) # may vary
+        a = np.array((0.05, 0.06, 0.07))/12
+        syse.fv(a, 10*12, -100, -100)
+        array([ 15692.92889434,  16569.87435405,  17509.44688102]) # may vary
 
     """
     when = _convert_when(when)
@@ -190,47 +186,41 @@ def pmt(rate, nper, pv, fv=0, when='end'):
         input element. If multiple inputs are array_like, they all must have
         the same shape.
 
-    Notes
-    -----
-    The payment is computed by solving the equation::
 
-     fv +
-     pv*(1 + rate)**nper +
-     pmt*(1 + rate*when)/rate*((1 + rate)**nper - 1) == 0
 
-    or, when ``rate == 0``::
+    .. Note::
 
-      fv + pv + pmt * nper == 0
+        The payment is computed by solving the equation::
 
-    for ``pmt``.
+            fv +
+            pv*(1 + rate)**nper +
+            pmt*(1 + rate*when)/rate*((1 + rate)**nper - 1) == 0
 
-    Note that computing a monthly mortgage payment is only
-    one use for this function.  For example, pmt returns the
-    periodic deposit one must make to achieve a specified
-    future balance given an initial deposit, a fixed,
-    periodically compounded interest rate, and the total
-    number of periods.
+        or, when ``rate == 0``::
 
-    References
-    ----------
-    .. [WRW] Wheeler, D. A., E. Rathke, and R. Weir (Eds.) (2009, May).
-       Open Document Format for Office Applications (OpenDocument)v1.2,
-       Part 2: Recalculated Formula (OpenFormula) Format - Annotated Version,
-       Pre-Draft 12. Organization for the Advancement of Structured Information
-       Standards (OASIS). Billerica, MA, USA. [ODT Document].
-       Available:
-       http://www.oasis-open.org/committees/documents.php
-       ?wg_abbrev=office-formulaOpenDocument-formula-20090508.odt
+            fv + pv + pmt * nper == 0
+
+        for ``pmt``.
+
+        Note that computing a monthly mortgage payment is only
+        one use for this function.  For example, pmt returns the
+        periodic deposit one must make to achieve a specified
+        future balance given an initial deposit, a fixed,
+        periodically compounded interest rate, and the total
+        number of periods.
+
 
     Examples
     --------
-    >>> import syse as syse
-
     What is the monthly payment needed to pay off a $200,000 loan in 15
     years at an annual interest rate of 7.5%?
 
-    >>> sye.pmt(0.075/12, 12*15, 200000)
-    -1854.0247200054619
+    ::
+
+        import syse as syse
+
+        sye.pmt(0.075/12, 12*15, 200000)
+        -1854.0247200054619
 
     In order to pay-off (i.e., have a future-value of 0) the $200,000 obtained
     today, a monthly payment of $1,854.02 would be required.  Note that this
@@ -267,39 +257,44 @@ def nper(rate, pmt, pv, fv=0, when='end'):
     when : {{'begin', 1}, {'end', 0}}, {string, int}, optional
         When payments are due ('begin' (1) or 'end' (0))
 
-    Notes
-    -----
-    The number of periods ``nper`` is computed by solving the equation::
 
-     fv + pv*(1+rate)**nper + pmt*(1+rate*when)/rate*((1+rate)**nper-1) = 0
+    .. Note::
 
-    but if ``rate = 0`` then::
+        The number of periods ``nper`` is computed by solving the equation::
 
-     fv + pv + pmt*nper = 0
+            fv + pv*(1+rate)**nper + pmt*(1+rate*when)/rate*((1+rate)**nper-1) = 0
+
+        but if ``rate = 0`` then::
+
+            fv + pv + pmt*nper = 0
+
 
     Examples
     --------
-    >>> import numpy as np
-    >>> import syse as syse
-
     If you only had $150/month to pay towards the loan, how long would it take
     to pay-off a loan of $8,000 at 7% annual interest?
 
-    >>> print(np.round(syse.nper(0.07/12, -150, 8000), 5))
-    64.07335
+    ::
+
+        import numpy as np
+        import syse as syse
+
+        print(np.round(syse.nper(0.07/12, -150, 8000), 5))
+        64.07335
 
     So, over 64 months would be required to pay off the loan.
 
     The same analysis could be done with several different interest rates
-    and/or payments and/or total amounts to produce an entire table.
+    and/or payments and/or total amounts to produce an entire table::
 
-    >>> syse.nper(*(np.ogrid[0.07/12: 0.08/12: 0.01/12,
-    ...                     -150   : -99    : 50    ,
-    ...                     8000   : 9001   : 1000]))
-    array([[[ 64.07334877,  74.06368256],
-            [108.07548412, 127.99022654]],
-           [[ 66.12443902,  76.87897353],
-            [114.70165583, 137.90124779]]])
+        syse.nper(*(np.ogrid[0.07/12: 0.08/12: 0.01/12,
+                            -150: -99: 50,
+                            8000: 9001: 1000]))
+
+        array([[[ 64.07334877,  74.06368256],
+                [108.07548412, 127.99022654]],
+                [[ 66.12443902,  76.87897353],
+                [114.70165583, 137.90124779]]])
 
     """
     when = _convert_when(when)
@@ -366,57 +361,69 @@ def ipmt(rate, per, nper, pv, fv=0, when='end'):
     --------
     ppmt, pmt, pv
 
-    Notes
-    -----
-    The total payment is made up of payment against principal plus interest.
 
-    ``pmt = ppmt + ipmt``
+
+    .. Note::
+
+        The total payment is made up of payment against principal plus interest.
+
+        ``pmt = ppmt + ipmt``
+
 
     Examples
     --------
-    >>> import numpy as np
-    >>> import syse as syse
-
     What is the amortization schedule for a 1 year loan of $2500 at
     8.24% interest per year compounded monthly?
 
-    >>> principal = 2500.00
+    ::
+
+        import numpy as np
+        import syse as syse
+
+        principal = 2500.00
 
     The 'per' variable represents the periods of the loan.  Remember that
     financial equations start the period count at 1!
 
-    >>> per = np.arange(1*12) + 1
-    >>> ipmt = syse.ipmt(0.0824/12, per, 1*12, principal)
-    >>> ppmt = syse.ppmt(0.0824/12, per, 1*12, principal)
+    ::
+
+        per = np.arange(1*12) + 1
+        ipmt = syse.ipmt(0.0824/12, per, 1*12, principal)
+        ppmt = syse.ppmt(0.0824/12, per, 1*12, principal)
 
     Each element of the sum of the 'ipmt' and 'ppmt' arrays should equal
     'pmt'.
 
-    >>> pmt = syse.pmt(0.0824/12, 1*12, principal)
-    >>> np.allclose(ipmt + ppmt, pmt)
-    True
+    ::
 
-    >>> fmt = '{0:2d} {1:8.2f} {2:8.2f} {3:8.2f}'
-    >>> for payment in per:
-    ...     index = payment - 1
-    ...     principal = principal + ppmt[index]
-    ...     print(fmt.format(payment, ppmt[index], ipmt[index], principal))
-     1  -200.58   -17.17  2299.42
-     2  -201.96   -15.79  2097.46
-     3  -203.35   -14.40  1894.11
-     4  -204.74   -13.01  1689.37
-     5  -206.15   -11.60  1483.22
-     6  -207.56   -10.18  1275.66
-     7  -208.99    -8.76  1066.67
-     8  -210.42    -7.32   856.25
-     9  -211.87    -5.88   644.38
-    10  -213.32    -4.42   431.05
-    11  -214.79    -2.96   216.26
-    12  -216.26    -1.49    -0.00
+        pmt = syse.pmt(0.0824/12, 1*12, principal)
+        np.allclose(ipmt + ppmt, pmt)
+        True
 
-    >>> interestpd = np.sum(ipmt)
-    >>> np.round(interestpd, 2)
-    -112.98
+    ::
+
+        fmt = '{0:2d} {1:8.2f} {2:8.2f} {3:8.2f}'
+        for payment in per:
+            index = payment - 1
+            principal = principal + ppmt[index]
+            print(fmt.format(payment, ppmt[index], ipmt[index], principal))
+
+            1  -200.58   -17.17  2299.42
+            2  -201.96   -15.79  2097.46
+            3  -203.35   -14.40  1894.11
+            4  -204.74   -13.01  1689.37
+            5  -206.15   -11.60  1483.22
+            6  -207.56   -10.18  1275.66
+            7  -208.99    -8.76  1066.67
+            8  -210.42    -7.32   856.25
+            9  -211.87    -5.88   644.38
+            10  -213.32    -4.42   431.05
+            11  -214.79    -2.96   216.26
+            12  -216.26    -1.49    -0.00
+
+        interestpd = np.sum(ipmt)
+        np.round(interestpd, 2)
+        -112.98
 
     """
     when = _convert_when(when)
@@ -521,43 +528,34 @@ def pv(rate, nper, pmt, fv=0, when='end'):
     out : ndarray, float
         Present value of a series of payments or investments.
 
-    Notes
-    -----
-    The present value is computed by solving the equation::
 
-     fv +
-     pv*(1 + rate)**nper +
-     pmt*(1 + rate*when)/rate*((1 + rate)**nper - 1) = 0
+    .. Note::
 
-    or, when ``rate = 0``::
+        The present value is computed by solving the equation::
 
-     fv + pv + pmt * nper = 0
+        fv +
+        pv*(1 + rate)**nper +
+        pmt*(1 + rate*when)/rate*((1 + rate)**nper - 1) = 0
 
-    for `pv`, which is then returned.
+        or, when ``rate = 0``::
 
-    References
-    ----------
-    .. [WRW] Wheeler, D. A., E. Rathke, and R. Weir (Eds.) (2009, May).
-       Open Document Format for Office Applications (OpenDocument)v1.2,
-       Part 2: Recalculated Formula (OpenFormula) Format - Annotated Version,
-       Pre-Draft 12. Organization for the Advancement of Structured Information
-       Standards (OASIS). Billerica, MA, USA. [ODT Document].
-       Available:
-       http://www.oasis-open.org/committees/documents.php?wg_abbrev=office-formula
-       OpenDocument-formula-20090508.odt
+            fv + pv + pmt * nper = 0
 
-    Examples
+            for `pv`, which is then returned.
+
+
+    Examples:
     --------
-    >>> import numpy as np
-    >>> import syse as syse
-
     What is the present value (e.g., the initial investment)
     of an investment that needs to total $15692.93
     after 10 years of saving $100 every month?  Assume the
-    interest rate is 5% (annually) compounded monthly.
+    interest rate is 5% (annually) compounded monthly::
 
-    >>> syse.pv(0.05/12, 10*12, -100, 15692.93)
-    -100.00067131625819
+        import numpy as np
+        import syse as syse
+
+        syse.pv(0.05/12, 10*12, -100, 15692.93)
+        -100.00067131625819
 
     By convention, the negative sign represents cash flow out
     (i.e., money not available today).  Thus, to end up with
@@ -565,11 +563,11 @@ def pv(rate, nper, pmt, fv=0, when='end'):
     interest, one's initial deposit should also be $100.
 
     If any input is array_like, ``pv`` returns an array of equal shape.
-    Let's compare different interest rates in the example above:
+    Let's compare different interest rates in the example above::
 
-    >>> a = np.array((0.05, 0.04, 0.03))/12
-    >>> syse.pv(a, 10*12, -100, 15692.93)
-    array([ -100.00067132,  -649.26771385, -1273.78633713]) # may vary
+        a = np.array((0.05, 0.04, 0.03))/12
+        syse.pv(a, 10*12, -100, 15692.93)
+        array([ -100.00067132,  -649.26771385, -1273.78633713]) # may vary
 
     So, to end up with the same $15692.93 under the same $100 per month
     "savings plan," for annual interest rates of 4% and 3%, one would
@@ -633,24 +631,16 @@ def rate(nper, pmt, pv, fv, when='end', guess=None, tol=None, maxiter=100):
     maxiter : int, optional
         Maximum iterations in finding the solution
 
-    Notes
-    -----
-    The rate of interest is computed by iteratively solving the
-    (non-linear) equation::
 
-     fv + pv*(1+rate)**nper + pmt*(1+rate*when)/rate * ((1+rate)**nper - 1) = 0
+    .. Note::
 
-    for ``rate``.
+        The rate of interest is computed by iteratively solving the
+        (non-linear) equation::
 
-    References
-    ----------
-    Wheeler, D. A., E. Rathke, and R. Weir (Eds.) (2009, May). Open Document
-    Format for Office Applications (OpenDocument)v1.2, Part 2: Recalculated
-    Formula (OpenFormula) Format - Annotated Version, Pre-Draft 12.
-    Organization for the Advancement of Structured Information Standards
-    (OASIS). Billerica, MA, USA. [ODT Document]. Available:
-    http://www.oasis-open.org/committees/documents.php?wg_abbrev=office-formula
-    OpenDocument-formula-20090508.odt
+        fv + pv*(1+rate)**nper + pmt*(1+rate*when)/rate * ((1+rate)**nper - 1) = 0
+
+        for ``rate``.
+
 
     """
     when = _convert_when(when)
@@ -717,52 +707,55 @@ def irr(values, guess=0.1, tol=1e-12, maxiter=100):
     out : float
         Internal Rate of Return for periodic input values.
 
-    Notes
-    -----
-    The IRR is perhaps best understood through an example (illustrated
-    using np.irr in the Examples section below). Suppose one invests 100
-    units and then makes the following withdrawals at regular (fixed)
-    intervals: 39, 59, 55, 20.  Assuming the ending value is 0, one's 100
-    unit investment yields 173 units; however, due to the combination of
-    compounding and the periodic withdrawals, the "average" rate of return
-    is neither simply 0.73/4 nor (1.73)^0.25-1.  Rather, it is the solution
-    (for :math:`r`) of the equation:
 
-    .. math::
+    .. Note::
+
+        The IRR is perhaps best understood through an example (illustrated
+        using np.irr in the Examples section below). Suppose one invests 100
+        units and then makes the following withdrawals at regular (fixed)
+        intervals: 39, 59, 55, 20.  Assuming the ending value is 0, one's 100
+        unit investment yields 173 units; however, due to the combination of
+        compounding and the periodic withdrawals, the "average" rate of return
+        is neither simply 0.73/4 nor (1.73)^0.25-1.  Rather, it is the solution
+        (for :math:`r`) of the equation:
+
+
+    .. Math::
 
         -100 + \\frac{39}{1+r} + \\frac{59}{(1+r)^2} + \\frac{55}{(1+r)^3} + \\frac{20}{(1+r)^4} = 0
 
 
     .. code::
 
-       >>> -100 + (39/1+r) = 0
+       -100 + (39/1+r) = 0
 
 
     In general, for `values` :math:`= [v_0, v_1, ... v_M]`,
     irr is the solution of the equation: [G]_
 
+
     .. math::
+
         \\sum_{t=0}^M{\\frac{v_t}{(1+irr)^{t}}} = 0
 
-    References
-    ----------
-    .. [G] L. J. Gitman, "Principles of Managerial Finance, Brief," 3rd ed.,
-       Addison-Wesley, 2003, pg. 348.
 
     Examples
     --------
-    >>> import syse as syse
 
-    >>> round(syse.irr([-100, 39, 59, 55, 20]), 5)
-    0.28095
-    >>> round(syse.irr([-100, 0, 0, 74]), 5)
-    -0.0955
-    >>> round(syse.irr([-100, 100, 0, -7]), 5)
-    -0.0833
-    >>> round(syse.irr([-100, 100, 0, 7]), 5)
-    0.06206
-    >>> round(syse.irr([-5, 10.5, 1, -8, 1]), 5)
-    0.0886
+    ::
+
+        import syse as syse
+
+        round(syse.irr([-100, 39, 59, 55, 20]), 5)
+        0.28095
+        round(syse.irr([-100, 0, 0, 74]), 5)
+        -0.0955
+        round(syse.irr([-100, 100, 0, -7]), 5)
+        -0.0833
+        round(syse.irr([-100, 100, 0, 7]), 5)
+        0.06206
+        round(syse.irr([-5, 10.5, 1, -8, 1]), 5)
+        0.0886
 
     """
     values = np.atleast_1d(values)
@@ -838,36 +831,33 @@ def npv(rate, values):
     -----
     Returns the result of: [G]_
 
-    .. math :: \\sum_{t=0}^{M-1}{\\frac{values_t}{(1+rate)^{t}}}
+    .. math:: \\sum_{t=0}^{M-1}{\\frac{values_t}{(1+rate)^{t}}}
 
-    References
-    ----------
-    .. [G] L. J. Gitman, "Principles of Managerial Finance, Brief," 3rd ed.,
-       Addison-Wesley, 2003, pg. 346.
 
     Examples
     --------
-    >>> import numpy as np
-    >>> import syse as syse
 
     Consider a potential project with an initial investment of $40 000 and
     projected cashflows of $5 000, $8 000, $12 000 and $30 000 at the end of
     each period discounted at a rate of 8% per period. To find the project's
-    net present value:
+    net present value::
 
-    >>> rate, cashflows = 0.08, [-40_000, 5_000, 8_000, 12_000, 30_000]
-    >>> syse.npv(rate, cashflows).round(5)
-    3065.22267
+        import numpy as np
+        import syse as syse
+
+        rate, cashflows = 0.08, [-40_000, 5_000, 8_000, 12_000, 30_000]
+        syse.npv(rate, cashflows).round(5)
+        3065.22267
 
     It may be preferable to split the projected cashflow into an initial
     investment and expected future cashflows. In this case, the value of
     the initial cashflow is zero and the initial investment is later added
-    to the future cashflows net present value:
+    to the future cashflows net present value::
 
-    >>> initial_cashflow = cashflows[0]
-    >>> cashflows[0] = 0
-    >>> np.round(syse.npv(rate, cashflows) + initial_cashflow, 5)
-    3065.22267
+        initial_cashflow = cashflows[0]
+        cashflows[0] = 0
+        np.round(syse.npv(rate, cashflows) + initial_cashflow, 5)
+        3065.22267
 
     """
     values = np.atleast_2d(values)
@@ -933,21 +923,21 @@ def depreciate(cost, salvage, life):
     :param n: life of the asset in years
     :return: depreciation amount
 
-    Notes
-    -----
-    The depreciation amount for each full year is the same amount: the original value of the asset B minus the
-    salvage value S all divided by the number of years N:
+    .. Note::
+
+        The depreciation amount for each full year is the same amount: the original value of the asset B minus the
+        salvage value S all divided by the number of years N:
 
     Examples
     --------
 
-    A company purchased a machine for $100,000 with an estimated salvage value of $10,000 after 5 years.
+    A company purchased a machine for $100,000 with an estimated salvage value of $10,000 after 5 years::
 
-    >>> cost = 100000
-    >>> salvage = 10000
-    >>> life = 5
+        cost = 100000
+        salvage = 10000
+        life = 5
 
-    >>> syse.depreciate(cost, salvage, life)
+        syse.depreciate(cost, salvage, life)
 
     .. jupyter-execute::
         :hide-code:
@@ -1097,17 +1087,22 @@ def linear_pro(costs, budget):
     -------
     A list of the maximum values that can be allocated to each cost while staying within the budget.
 
-    Notes
-    -----
-    This function seeks to **maximize** the values.
+
+    .. Caution::
+
+        This function seeks to **maximize** the values.
+
 
     Examples
     --------
-    >>> costs = [1000, 2000, 3000]
-    >>> budget = 5000
-    >>> solution = syse.linear_pro(costs, budget)
-    >>> print(solution)
-    >>> Output: [1000.0, 2000.0, 1000.0]
+    ::
+
+        costs = [1000, 2000, 3000]
+        budget = 5000
+        solution = syse.linear_pro(costs, budget)
+        print(solution)
+        Output: [1000.0, 2000.0, 1000.0]
+
     """
     # Initialize the solution list
     # Calculate the total of all costs
@@ -1138,9 +1133,6 @@ def pert(tasks):
     :param tasks:
     :return: optimistic, most likely, & pessimistic time
 
-    Notes
-    -----
-
     Examples
     --------
     You are working on a project to build a new office building.
@@ -1153,13 +1145,14 @@ def pert(tasks):
     **3.** Construct the building\n
     **4.** Finish the interior
 
-    Using the PERT method, you can estimate the time required to complete the project.
+    Using the PERT method, you can estimate the time required to complete the project::
 
-    >>> tasks = [DesignBuilding(), PurchaseMaterials(), ConstructBuilding(), FinishInterior()]
-    >>> optimistic_time, most_likely_time, pessimistic_time = pert(tasks)
-    >>> print('Optimistic Time:', optimistic_time)
-    >>> print('Most Likely Time:', most_likely_time)
-    >>> print('Pessimistic Time:', pessimistic_time)
+        tasks = [DesignBuilding(), PurchaseMaterials(), ConstructBuilding(), FinishInterior()]
+        optimistic_time, most_likely_time, pessimistic_time = pert(tasks)
+        print('Optimistic Time:', optimistic_time)
+        print('Most Likely Time:', most_likely_time)
+        print('Pessimistic Time:', pessimistic_time)
+
     """
     # Create a list to store the estimated times for each task
     estimated_time = []
@@ -1212,3 +1205,93 @@ def process():
     **C.** 25%\n
     **D.** 75%
     """
+
+
+def eoq(a: float, d: float, h: float) -> float:
+    """
+    Calculate the economic order quantity (EOQ) for an instantaneous replenishment inventory model.
+
+    Parameters:
+        A (float): The cost to place one order.
+        D (float): The number of units used per year.
+        h (float): The holding cost per unit per year.
+
+    Returns:
+        float: The EOQ that minimizes the total annual inventory cost.
+
+    Examples:
+    ---------
+    Let's say that a small business that sells specialty coffee beans uses an instantaneous replenishment
+    inventory model to manage its inventory of beans. The business purchases its coffee beans from a supplier and
+    pays a fixed cost of $50 to place an order, regardless of the quantity ordered. The business uses 500 bags of
+    coffee beans per year, and the holding cost per bag per year is $5.
+
+    To determine the optimal order quantity, we can use the eoq function::
+
+        A = 50
+        D = 500
+        h = 5
+        eoq = syse.eoq(A, D, h)
+        Output = 100
+
+    """
+    eoq = math.sqrt((2 * a * d) / h)
+    return eoq
+
+
+def emq(a: float, d: float, h: float, r: float) -> float:
+    """
+    Calculate the economic manufacturing quantity (EMQ) for a finite replenishment rate inventory model.
+
+    Parameters:
+        A (float): The cost to place one order.
+        D (float): The number of units used per year.
+        h (float): The holding cost per unit per year.
+        R (float): The replenishment rate.
+
+    Returns:
+        float: The EMQ that minimizes the total annual inventory cost.
+
+    .. Note::
+
+        The EMQ formula assumes the same conditions as the EOQ formula
+        (i.e., constant and known demand, no stockouts, constant and known ordering
+        costs and holding costs), but also assumes that the replenishment rate is
+        finite. The EMQ represents the optimal production quantity that minimizes
+        the total annual inventory cost, including both holding costs and ordering
+        costs, when production is constrained by a finite rate of replenishment.
+
+        Note that the formula assumes that the replenishment rate is given in
+        units per day, and that the annual demand is normalized to units per
+        day by dividing by 365.
+
+    Examples:
+    --------
+    Let's say that a manufacturer produces widgets using a finite replenishment rate inventory model to manage its
+    inventory of raw materials. The manufacturer purchases a raw material from a supplier and pays a fixed cost of
+    $100 to place an order, regardless of the quantity ordered. The manufacturer uses 10,000 units of the raw material
+    per year, and the holding cost per unit per year is $8. The supplier has a limited production capacity and can only
+    replenish the manufacturer's inventory at a maximum rate of 500 units per day.
+
+    To determine the optimal production quantity, we can use the emq function::
+
+        A = 100
+        D = 10000
+        h = 8
+        R = 500
+        emq = syse.emq(A, D, h, R)
+        print(emq)
+
+        Output = 514.29
+
+
+    .. Important::
+
+        Again, note that this example is simplified and does not take into account other factors that could
+        influence the manufacturer's decision-making, such as variability in demand and lead times, stockout costs, and
+        other costs associated with ordering and holding inventory. Nonetheless, the EMQ model provides a useful starting
+        point for inventory management decisions in a constrained production environment.
+
+    """
+    emq = math.sqrt((2 * a * d) / (h * (1 - (d / (r * 365)))))
+    return emq
