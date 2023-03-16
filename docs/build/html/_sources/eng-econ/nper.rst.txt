@@ -1,5 +1,5 @@
-Number of Periodic Payments (NPER)
-==================================
+Number of Periodic Payments **(NPER)**
+======================================
 
 .. currentmodule:: syse
 .. autosummary::

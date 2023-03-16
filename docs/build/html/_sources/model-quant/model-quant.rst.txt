@@ -1,5 +1,5 @@
-Modeling & Quantitative Analysis
-================================
+Overview
+========
 
 .. currentmodule:: syse
 .. autosummary::

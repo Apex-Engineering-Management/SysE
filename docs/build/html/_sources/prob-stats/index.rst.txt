@@ -1,5 +1,5 @@
-Probability & Statistics
-========================
+**Probability & Statistics**
+============================
 
 
 .. toctree::

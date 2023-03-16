@@ -66,12 +66,12 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../usage/index.html">Usage</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Engineering Economics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="eng-econ.html">Engineering Economics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fv.html">Future (FV)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pmt.html">Payment (PMT)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Number of Periodic Payments (NPER)</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="../usage/index.html"><strong>Getting Started</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><strong>Engineering Economics</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="eng-econ.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fv.html">Future Value <strong>(FV)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pmt.html">Payment <strong>(PMT)</strong></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Number of Periodic Payments <strong>(NPER)</strong></a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="ipmt.html">Interest Portion of Payment (IPMT)</a></li>
@@ -82,12 +82,16 @@
 <li class="toctree-l2"><a class="reference internal" href="npv.html">Net Present Value (NPV)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mirr.html">Modified Internal Rate of Return (MIRR)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="depreciate.html">Straight-Line Depreciation (DEPRECIATE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="digits.html">Sum-of-Years-Digits Method (DIGITS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decline.html">Declining Balance Method (DECLINE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="double.html">Double Declining Balance Method (DOUBLE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html">Units of Production Method (UNITS)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../prob-stats/index.html">Probability &amp; Statistics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model-quant/index.html">Modeling &amp; Quantitative Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../eng-mgt/index.html">Engineering Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interest-tables.html">Interest Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prob-stats/index.html"><strong>Probability &amp; Statistics</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model-quant/index.html"><strong>Modeling &amp; Quantitative Analysis</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eng-mgt/index.html"><strong>Engineering Management</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interest-tables.html"><strong>Interest Tables</strong></a></li>
 </ul>
 
         </div>
@@ -104,8 +108,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html">Engineering Economics</a></li>
-      <li class="breadcrumb-item active">Number of Periodic Payments (NPER)</li>
+          <li class="breadcrumb-item"><a href="index.html"><strong>Engineering Economics</strong></a></li>
+      <li class="breadcrumb-item active">Number of Periodic Payments <strong>(NPER)</strong></li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/eng-econ/nper.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -116,7 +120,7 @@
            <div itemprop="articleBody">
              
   <section id="number-of-periodic-payments-nper">
-<h1>Number of Periodic Payments (NPER)<a class="headerlink" href="#number-of-periodic-payments-nper" title="Permalink to this heading"></a></h1>
+<h1>Number of Periodic Payments <strong>(NPER)</strong><a class="headerlink" href="#number-of-periodic-payments-nper" title="Permalink to this heading"></a></h1>
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#syse.nper" title="syse.nper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nper</span></code></a>(rate, pmt, pv[, fv, when])</p></td>
@@ -153,14 +157,16 @@
 </pre></div>
 </div>
 </div>
-<p class="rubric">Examples</p>
+<section id="examples">
+<h2>Examples:<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <p>If you only had $150/month to pay towards the loan, how long would it take
 to pay-off a loan of $8,000 at 7% annual interest?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">syse</span> <span class="k">as</span> <span class="nn">syse</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">syse</span><span class="o">.</span><span class="n">nper</span><span class="p">(</span><span class="mf">0.07</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">,</span> <span class="mi">8000</span><span class="p">),</span> <span class="mi">5</span><span class="p">))</span>
-<span class="mf">64.07335</span>
+
+<span class="n">Output</span> <span class="o">=</span> <span class="mf">64.07335</span>
 </pre></div>
 </div>
 <p>So, over 64 months would be required to pay off the loan.</p>
@@ -170,12 +176,13 @@ and/or payments and/or total amounts to produce an entire table:</p>
                     <span class="o">-</span><span class="mi">150</span><span class="p">:</span> <span class="o">-</span><span class="mi">99</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
                     <span class="mi">8000</span><span class="p">:</span> <span class="mi">9001</span><span class="p">:</span> <span class="mi">1000</span><span class="p">]))</span>
 
-<span class="n">array</span><span class="p">([[[</span> <span class="mf">64.07334877</span><span class="p">,</span>  <span class="mf">74.06368256</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">108.07548412</span><span class="p">,</span> <span class="mf">127.99022654</span><span class="p">]],</span>
-        <span class="p">[[</span> <span class="mf">66.12443902</span><span class="p">,</span>  <span class="mf">76.87897353</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">114.70165583</span><span class="p">,</span> <span class="mf">137.90124779</span><span class="p">]]])</span>
+<span class="n">Output</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[[</span> <span class="mf">64.07334877</span><span class="p">,</span>  <span class="mf">74.06368256</span><span class="p">],</span>
+         <span class="p">[</span><span class="mf">108.07548412</span><span class="p">,</span> <span class="mf">127.99022654</span><span class="p">]],</span>
+         <span class="p">[[</span> <span class="mf">66.12443902</span><span class="p">,</span>  <span class="mf">76.87897353</span><span class="p">],</span>
+         <span class="p">[</span><span class="mf">114.70165583</span><span class="p">,</span> <span class="mf">137.90124779</span><span class="p">]]])</span>
 </pre></div>
 </div>
+</section>
 </dd></dl>
 
 </section>

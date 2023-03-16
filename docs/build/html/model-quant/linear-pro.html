@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Engineering Management" href="../eng-mgt/index.html" />
-    <link rel="prev" title="Modeling &amp; Quantitative Analysis" href="model-quant.html" /> 
+    <link rel="prev" title="Overview" href="model-quant.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -66,18 +66,18 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../usage/index.html">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../eng-econ/index.html">Engineering Economics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../prob-stats/index.html">Probability &amp; Statistics</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Modeling &amp; Quantitative Analysis</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="model-quant.html">Modeling &amp; Quantitative Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/index.html"><strong>Getting Started</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eng-econ/index.html"><strong>Engineering Economics</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prob-stats/index.html"><strong>Probability &amp; Statistics</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><strong>Modeling &amp; Quantitative Analysis</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="model-quant.html">Overview</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Linear Programming: Maximize (LINEAR_PRO)</a><ul class="simple">
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../eng-mgt/index.html">Engineering Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interest-tables.html">Interest Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eng-mgt/index.html"><strong>Engineering Management</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interest-tables.html"><strong>Interest Tables</strong></a></li>
 </ul>
 
         </div>
@@ -94,7 +94,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html">Modeling &amp; Quantitative Analysis</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><strong>Modeling &amp; Quantitative Analysis</strong></a></li>
       <li class="breadcrumb-item active">Linear Programming: Maximize (LINEAR_PRO)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/model-quant/linear-pro.rst.txt" rel="nofollow"> View page source</a>
@@ -119,30 +119,36 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="syse.linear_pro">
 <span class="sig-prename descclassname"><span class="pre">syse.</span></span><span class="sig-name descname"><span class="pre">linear_pro</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">costs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">budget</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#syse.linear_pro" title="Permalink to this definition"></a></dt>
-<dd><p>A Python function for linear programming.</p>
+<dd><p>A Python function for linear programming. (Placeholder for a better function)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>costs</strong> (<em>A list</em><em> of </em><em>costs associated with a project.</em>) – </p></li>
-<li><p><strong>budget</strong> (<em>The total budget allocated to the project.</em>) – </p></li>
+<li><p><strong>costs</strong> – A list of costs associated with a project.</p></li>
+<li><p><strong>budget</strong> – The total budget allocated to the project.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A list of the maximum values that can be allocated to each cost while staying within the budget.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>This function seeks to <strong>maximize</strong> the values.</p>
 </div>
-<p class="rubric">Examples</p>
+<section id="examples">
+<h2>Examples:<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">costs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">]</span>
 <span class="n">budget</span> <span class="o">=</span> <span class="mi">5000</span>
 <span class="n">solution</span> <span class="o">=</span> <span class="n">syse</span><span class="o">.</span><span class="n">linear_pro</span><span class="p">(</span><span class="n">costs</span><span class="p">,</span> <span class="n">budget</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">solution</span><span class="p">)</span>
-<span class="n">Output</span><span class="p">:</span> <span class="p">[</span><span class="mf">1000.0</span><span class="p">,</span> <span class="mf">2000.0</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">]</span>
+
+<span class="n">Output</span><span class="o">=</span> <span class="p">[</span><span class="mf">1000.0</span><span class="p">,</span> <span class="mf">2000.0</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">]</span>
 </pre></div>
 </div>
+</section>
 </dd></dl>
 
 </section>
@@ -151,7 +157,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="model-quant.html" class="btn btn-neutral float-left" title="Modeling &amp; Quantitative Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="model-quant.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../eng-mgt/index.html" class="btn btn-neutral float-right" title="Engineering Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

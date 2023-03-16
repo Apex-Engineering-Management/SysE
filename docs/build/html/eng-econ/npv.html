@@ -66,12 +66,12 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../usage/index.html">Usage</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Engineering Economics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="eng-econ.html">Engineering Economics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fv.html">Future (FV)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pmt.html">Payment (PMT)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nper.html">Number of Periodic Payments (NPER)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/index.html"><strong>Getting Started</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><strong>Engineering Economics</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="eng-econ.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fv.html">Future Value <strong>(FV)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pmt.html">Payment <strong>(PMT)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nper.html">Number of Periodic Payments <strong>(NPER)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="ipmt.html">Interest Portion of Payment (IPMT)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ppmt.html">Payment Against Loan Principal (PPMT)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pv.html">Present Value (PV)</a></li>
@@ -82,12 +82,16 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mirr.html">Modified Internal Rate of Return (MIRR)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="depreciate.html">Straight-Line Depreciation (DEPRECIATE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="digits.html">Sum-of-Years-Digits Method (DIGITS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decline.html">Declining Balance Method (DECLINE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="double.html">Double Declining Balance Method (DOUBLE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html">Units of Production Method (UNITS)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../prob-stats/index.html">Probability &amp; Statistics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model-quant/index.html">Modeling &amp; Quantitative Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../eng-mgt/index.html">Engineering Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interest-tables.html">Interest Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prob-stats/index.html"><strong>Probability &amp; Statistics</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model-quant/index.html"><strong>Modeling &amp; Quantitative Analysis</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eng-mgt/index.html"><strong>Engineering Management</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interest-tables.html"><strong>Interest Tables</strong></a></li>
 </ul>
 
         </div>
@@ -104,7 +108,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html">Engineering Economics</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><strong>Engineering Economics</strong></a></li>
       <li class="breadcrumb-item active">Net Present Value (NPV)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/eng-econ/npv.rst.txt" rel="nofollow"> View page source</a>
@@ -134,18 +138,15 @@
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rate</strong> (<em>scalar</em>) – The discount rate.</p></li>
-<li><p><strong>values</strong> (<em>array_like</em><em>, </em><em>shape</em><em>(</em><em>M</em><em>, </em><em>)</em>) – The values of the time series of cash flows.  The (fixed) time
-interval between cash flow “events” must be the same as that for
-which <cite>rate</cite> is given (i.e., if <cite>rate</cite> is per year, then precisely
-a year is understood to elapse between each cash flow event).  By
-convention, investments or “deposits” are negative, income or
-“withdrawals” are positive; <cite>values</cite> must begin with the initial
+<li><p><strong>values</strong> (<em>array_like</em><em>, </em><em>shape</em><em>(</em><em>M</em><em>, </em><em>)</em>) – The values of the time series of cash flows. The (fixed) time interval
+between cash flow “events” must be the same as that for which <cite>rate</cite> is given (i.e., if <cite>rate</cite> is per year,
+then precise a year is understood to elapse between each cash flow event). By convention, investments or
+“deposits” are negative, income or “withdrawals” are positive; <cite>values</cite> must begin with the initial
 investment, thus <cite>values[0]</cite> will typically be negative.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>out</strong> – The NPV of the input cash flow series <cite>values</cite> at the discount
-<cite>rate</cite>.</p>
+<dd class="field-even"><p>The NPV of the input cash flow series <cite>values</cite> at the discount <cite>rate</cite>.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
@@ -164,7 +165,8 @@ examples.</p>
 <p>Returns the result of: <span id="id1">[G]</span></p>
 <div class="math">
 <p><img src="../_images/math/efda392f70a68f8628c59861bca01d798260c1b1.png" alt="\sum_{t=0}^{M-1}{\frac{values_t}{(1+rate)^{t}}}"/></p>
-</div><p class="rubric">Examples</p>
+</div><section id="examples">
+<h2>Examples:<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <p>Consider a potential project with an initial investment of $40 000 and
 projected cashflows of $5 000, $8 000, $12 000 and $30 000 at the end of
 each period discounted at a rate of 8% per period. To find the project’s
@@ -174,7 +176,8 @@ net present value:</p>
 
 <span class="n">rate</span><span class="p">,</span> <span class="n">cashflows</span> <span class="o">=</span> <span class="mf">0.08</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">40_000</span><span class="p">,</span> <span class="mi">5_000</span><span class="p">,</span> <span class="mi">8_000</span><span class="p">,</span> <span class="mi">12_000</span><span class="p">,</span> <span class="mi">30_000</span><span class="p">]</span>
 <span class="n">syse</span><span class="o">.</span><span class="n">npv</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">cashflows</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="mf">3065.22267</span>
+
+<span class="n">Output</span> <span class="o">=</span> <span class="mf">3065.22267</span>
 </pre></div>
 </div>
 <p>It may be preferable to split the projected cashflow into an initial
@@ -184,9 +187,11 @@ to the future cashflows net present value:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">initial_cashflow</span> <span class="o">=</span> <span class="n">cashflows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">cashflows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">syse</span><span class="o">.</span><span class="n">npv</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">cashflows</span><span class="p">)</span> <span class="o">+</span> <span class="n">initial_cashflow</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="mf">3065.22267</span>
+
+<span class="n">Output</span> <span class="o">=</span> <span class="mf">3065.22267</span>
 </pre></div>
 </div>
+</section>
 </dd></dl>
 
 </section>

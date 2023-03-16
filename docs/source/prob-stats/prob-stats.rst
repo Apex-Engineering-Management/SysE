@@ -1,5 +1,5 @@
-Probability & Statistics
-========================
+Overview
+=========
 
 .. currentmodule:: syse
 .. autosummary::

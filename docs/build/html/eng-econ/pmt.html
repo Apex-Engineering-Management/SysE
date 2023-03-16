@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Number of Periodic Payments (NPER)" href="nper.html" />
-    <link rel="prev" title="Future (FV)" href="fv.html" /> 
+    <link rel="prev" title="Future Value (FV)" href="fv.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -66,14 +66,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../usage/index.html">Usage</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Engineering Economics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="eng-econ.html">Engineering Economics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fv.html">Future (FV)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Payment (PMT)</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="../usage/index.html"><strong>Getting Started</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><strong>Engineering Economics</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="eng-econ.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fv.html">Future Value <strong>(FV)</strong></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Payment <strong>(PMT)</strong></a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="nper.html">Number of Periodic Payments (NPER)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nper.html">Number of Periodic Payments <strong>(NPER)</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="ipmt.html">Interest Portion of Payment (IPMT)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ppmt.html">Payment Against Loan Principal (PPMT)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pv.html">Present Value (PV)</a></li>
@@ -82,12 +82,16 @@
 <li class="toctree-l2"><a class="reference internal" href="npv.html">Net Present Value (NPV)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mirr.html">Modified Internal Rate of Return (MIRR)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="depreciate.html">Straight-Line Depreciation (DEPRECIATE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="digits.html">Sum-of-Years-Digits Method (DIGITS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decline.html">Declining Balance Method (DECLINE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="double.html">Double Declining Balance Method (DOUBLE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html">Units of Production Method (UNITS)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../prob-stats/index.html">Probability &amp; Statistics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model-quant/index.html">Modeling &amp; Quantitative Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../eng-mgt/index.html">Engineering Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interest-tables.html">Interest Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prob-stats/index.html"><strong>Probability &amp; Statistics</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model-quant/index.html"><strong>Modeling &amp; Quantitative Analysis</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eng-mgt/index.html"><strong>Engineering Management</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interest-tables.html"><strong>Interest Tables</strong></a></li>
 </ul>
 
         </div>
@@ -104,8 +108,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html">Engineering Economics</a></li>
-      <li class="breadcrumb-item active">Payment (PMT)</li>
+          <li class="breadcrumb-item"><a href="index.html"><strong>Engineering Economics</strong></a></li>
+      <li class="breadcrumb-item active">Payment <strong>(PMT)</strong></li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/eng-econ/pmt.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -116,7 +120,7 @@
            <div itemprop="articleBody">
              
   <section id="payment-pmt">
-<h1>Payment (PMT)<a class="headerlink" href="#payment-pmt" title="Permalink to this heading"></a></h1>
+<h1>Payment <strong>(PMT)</strong><a class="headerlink" href="#payment-pmt" title="Permalink to this heading"></a></h1>
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#syse.pmt" title="syse.pmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pmt</span></code></a>(rate, nper, pv[, fv, when])</p></td>
@@ -152,20 +156,18 @@ at the beginning (<cite>when</cite> = {‘begin’, 1}) or the end
 <li><p><strong>rate</strong> (<em>array_like</em>) – Rate of interest (per period)</p></li>
 <li><p><strong>nper</strong> (<em>array_like</em>) – Number of compounding periods</p></li>
 <li><p><strong>pv</strong> (<em>array_like</em>) – Present value</p></li>
-<li><p><strong>fv</strong> (<em>array_like</em><em>,  </em><em>optional</em>) – Future value (default = 0)</p></li>
+<li><p><strong>fv</strong> (<em>array_like</em><em>, </em><em>optional</em>) – Future value (default = 0)</p></li>
 <li><p><strong>when</strong> (<em>{{'begin'</em><em>, </em><em>1}</em><em>, </em><em>{'end'</em><em>, </em><em>0}}</em><em>, </em><em>{string</em><em>, </em><em>int}</em>) – When payments are due (‘begin’ (1) or ‘end’ (0))</p></li>
 </ul>
 </dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>out</strong> – Payment against loan plus interest.  If all input is scalar, returns a
-scalar float.  If any input is array_like, returns payment for each
-input element. If multiple inputs are array_like, they all must have
-the same shape.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>ndarray</p>
-</dd>
 </dl>
+<section id="returns">
+<h2>Returns:<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><p>ndarray: Payment against loan plus interest. If all input is scalar, returns a scalar float. If any input is
+array_like, returns payment for each input element. If multiple inputs are array_like, they all must have
+the same shape.</p>
+</div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The payment is computed by solving the equation:</p>
@@ -186,18 +188,22 @@ future balance given an initial deposit, a fixed,
 periodically compounded interest rate, and the total
 number of periods.</p>
 </div>
-<p class="rubric">Examples</p>
+</section>
+<section id="examples">
+<h2>Examples:<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <p>What is the monthly payment needed to pay off a $200,000 loan in 15
 years at an annual interest rate of 7.5%?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">syse</span> <span class="k">as</span> <span class="nn">syse</span>
 
 <span class="n">sye</span><span class="o">.</span><span class="n">pmt</span><span class="p">(</span><span class="mf">0.075</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="o">*</span><span class="mi">15</span><span class="p">,</span> <span class="mi">200000</span><span class="p">)</span>
-<span class="o">-</span><span class="mf">1854.0247200054619</span>
+
+<span class="n">Output</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1854.0247200054619</span>
 </pre></div>
 </div>
 <p>In order to pay-off (i.e., have a future-value of 0) the $200,000 obtained
 today, a monthly payment of $1,854.02 would be required.  Note that this
 example illustrates usage of <cite>fv</cite> having a default value of 0.</p>
+</section>
 </dd></dl>
 
 </section>
@@ -206,7 +212,7 @@ example illustrates usage of <cite>fv</cite> having a default value of 0.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="fv.html" class="btn btn-neutral float-left" title="Future (FV)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fv.html" class="btn btn-neutral float-left" title="Future Value (FV)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="nper.html" class="btn btn-neutral float-right" title="Number of Periodic Payments (NPER)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -1,4 +1,4 @@
-Engineering Economics
+Overview
 =====================
 
 .. currentmodule:: syse
@@ -14,5 +14,9 @@ Engineering Economics
     npv
     mirr
     depreciate
+    digits
+    decline
+    double
+    units
 
 

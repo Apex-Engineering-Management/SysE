@@ -1,5 +1,5 @@
-Payment (PMT)
-=============
+Payment **(PMT)**
+=================
 
 .. currentmodule:: syse
 .. autosummary::

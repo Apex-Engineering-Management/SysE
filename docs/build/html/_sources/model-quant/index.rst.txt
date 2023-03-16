@@ -1,5 +1,5 @@
-Modeling & Quantitative Analysis
-================================
+**Modeling & Quantitative Analysis**
+====================================
 
 
 .. toctree::

@@ -66,12 +66,12 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../usage/index.html">Usage</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Engineering Economics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="eng-econ.html">Engineering Economics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fv.html">Future (FV)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pmt.html">Payment (PMT)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nper.html">Number of Periodic Payments (NPER)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/index.html"><strong>Getting Started</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><strong>Engineering Economics</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="eng-econ.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fv.html">Future Value <strong>(FV)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pmt.html">Payment <strong>(PMT)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="nper.html">Number of Periodic Payments <strong>(NPER)</strong></a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Interest Portion of Payment (IPMT)</a><ul class="simple">
 </ul>
 </li>
@@ -82,12 +82,16 @@
 <li class="toctree-l2"><a class="reference internal" href="npv.html">Net Present Value (NPV)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mirr.html">Modified Internal Rate of Return (MIRR)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="depreciate.html">Straight-Line Depreciation (DEPRECIATE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="digits.html">Sum-of-Years-Digits Method (DIGITS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="decline.html">Declining Balance Method (DECLINE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="double.html">Double Declining Balance Method (DOUBLE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html">Units of Production Method (UNITS)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../prob-stats/index.html">Probability &amp; Statistics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model-quant/index.html">Modeling &amp; Quantitative Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../eng-mgt/index.html">Engineering Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interest-tables.html">Interest Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prob-stats/index.html"><strong>Probability &amp; Statistics</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model-quant/index.html"><strong>Modeling &amp; Quantitative Analysis</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eng-mgt/index.html"><strong>Engineering Management</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interest-tables.html"><strong>Interest Tables</strong></a></li>
 </ul>
 
         </div>
@@ -104,7 +108,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html">Engineering Economics</a></li>
+          <li class="breadcrumb-item"><a href="index.html"><strong>Engineering Economics</strong></a></li>
       <li class="breadcrumb-item active">Interest Portion of Payment (IPMT)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/eng-econ/ipmt.rst.txt" rel="nofollow"> View page source</a>
@@ -144,10 +148,9 @@ Defaults to {‘end’, 0}.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>out</strong> – Interest portion of payment.  If all input is scalar, returns a scalar
-float.  If any input is array_like, returns interest payment for each
-input element. If multiple inputs are array_like, they all must have
-the same shape.</p>
+<dd class="field-even"><p>Interest portion of payment. If all input is scalar, returns a scalar float. If any input is
+array_like, returns interest payment for each input element. If multiple inputs are array_like,
+they all must have the same shape.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
@@ -162,7 +165,8 @@ the same shape.</p>
 <p>The total payment is made up of payment against principal plus interest.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pmt</span> <span class="pre">=</span> <span class="pre">ppmt</span> <span class="pre">+</span> <span class="pre">ipmt</span></code></p>
 </div>
-<p class="rubric">Examples</p>
+<section id="examples">
+<h2>Examples:<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <p>What is the amortization schedule for a 1 year loan of $2500 at
 8.24% interest per year compounded monthly?</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -209,6 +213,7 @@ financial equations start the period count at 1!</p>
 <span class="o">-</span><span class="mf">112.98</span>
 </pre></div>
 </div>
+</section>
 </dd></dl>
 
 </section>

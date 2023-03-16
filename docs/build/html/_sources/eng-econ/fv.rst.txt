@@ -1,5 +1,5 @@
-Future (FV)
-===========
+Future Value **(FV)**
+=====================
 
 .. currentmodule:: syse
 .. autosummary::

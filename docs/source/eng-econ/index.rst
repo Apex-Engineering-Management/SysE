@@ -1,5 +1,5 @@
-Engineering Economics
-========================
+**Engineering Economics**
+=========================
 
 
 .. toctree::
@@ -17,3 +17,7 @@ Engineering Economics
     npv
     mirr
     depreciate
+    digits
+    decline
+    double
+    units

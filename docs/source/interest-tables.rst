@@ -1,5 +1,5 @@
-Interest Tables
-===============
+**Interest Tables**
+===================
 
 .. list-table:: **Values of Interest Factors When** *n* **Equals Infinity**
    :widths: 25 25 25

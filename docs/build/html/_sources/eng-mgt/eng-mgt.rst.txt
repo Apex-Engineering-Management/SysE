@@ -1,4 +1,4 @@
-Engineering Management
+Overview
 ======================
 
 .. currentmodule:: syse
