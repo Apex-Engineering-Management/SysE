@@ -1150,13 +1150,16 @@ def eoq(a: float, d: float, h: float) -> float:
 def emq(a: float, d: float, h: float, r: float) -> float:
     """
     Calculate the economic manufacturing quantity (EMQ) for a finite replenishment rate inventory model.
+    
     Parameters:
         A (float): The cost to place one order.
         D (float): The number of units used per year.
         h (float): The holding cost per unit per year.
         R (float): The replenishment rate.
+        
     Returns:
         float: The EMQ that minimizes the total annual inventory cost.
+        
     .. Note::
         The EMQ formula assumes the same conditions as the EOQ formula
         (i.e., constant and known demand, no stockouts, constant and known ordering
@@ -1167,6 +1170,7 @@ def emq(a: float, d: float, h: float, r: float) -> float:
         Note that the formula assumes that the replenishment rate is given in
         units per day, and that the annual demand is normalized to units per
         day by dividing by 365.
+        
     Examples:
     ---------
     Let's say that a manufacturer produces widgets using a finite replenishment rate inventory model to manage its
@@ -1182,6 +1186,7 @@ def emq(a: float, d: float, h: float, r: float) -> float:
         emq = syse.emq(A, D, h, R)
         print(emq)
         Output = 514.29
+        
     .. Important::
         Again, note that this example is simplified and does not take into account other factors that could
         influence the manufacturer's decision-making, such as variability in demand and lead times, stockout costs, and
