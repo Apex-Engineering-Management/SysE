@@ -7,10 +7,12 @@ Welcome to SysE's documentation!
 ======================================
 **SysE** (/Sis'y/) is a Python library for Systems Engineering.
 
-SysE covers common **Industrial & Systems Engineering** methods such as:
+SysE covers common **Industrial & Systems Engineering** topics such as:
 
--
--
+- Engineering Economics
+- Probability & Statistics
+- Modeling & Quantitative Analysis
+- Engineering Management
 
 Some use cases include:
 
