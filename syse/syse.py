@@ -898,11 +898,13 @@ def sma(data, n):
         float: The simple moving average.
     Examples:
     ---------
-    Suppose you are the owner of a retail store and you want to analyze the sales performance of your store for the
+    Suppose you are the owner of a retail store, and you want to analyze the sales performance of your store for the
     last 10 days. You have a list of the daily sales figures for the past 10 days. You can use the above Python
     function to calculate the simple moving average of the sales figures over the past 10 days to get an idea of the
     store's overall sales trend. This information can be useful in determining whether you need to adjust your
     inventory or marketing strategies to improve sales.
+
+
     """
     if len(data) < n:
         return None
@@ -922,13 +924,14 @@ def wma(data, weights):
         float: The weighted moving average.
     Examples:
     ---------
-        Suppose you are a financial analyst and you want to analyze the stock price of a company over the
+        Suppose you are a financial analyst, and you want to analyze the stock price of a company over the
         past 5 days. You have a list of the daily closing prices for the past 5 days, and you believe that the
         most recent day's price should be given a higher weight than the previous days. You can use the above
         Python function to calculate the weighted moving average of the stock prices over the past 5 days,
         where the weight of the most recent day's price is 0.5 and the weights of the previous days are 0.3, 0.1,
         and 0.1 respectively. This information can be useful in determining whether the stock price is trending up or
         down and making investment decisions accordingly.
+
     """
     if len(data) != len(weights):
         return None
