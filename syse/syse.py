@@ -284,6 +284,7 @@ def ipmt(rate, per, nper, pv, fv=0, when='end'):
     See Also
     --------
     ppmt, pmt, pv
+    
     .. Note::
         The total payment is made up of payment against principal plus interest.
         ``pmt = ppmt + ipmt``
@@ -1117,28 +1118,25 @@ def pert(tasks):
     """
     Calculate the amount of time it will take to realistically finish a project
     
-    :param tasks:
-    :return: optimistic, most likely, & pessimistic time
+    Parameters:
+           tasks: list of estimated times for each task
+           
+    Returns:
+           float: optimistic
+           float: most likely
+           float: pessimistic time
     
     Examples:
     ---------
     You are working on a project to build a new office building.
     You need to estimate the time required to complete the project.
-    You have identified the following tasks:
-    
-           **1.** Design the building\n
-           **2.** Purchase materials\n
-           **3.** Construct the building\n
-           **4.** Finish the interior
-           
-    Using the PERT method, you can estimate the time required to complete the project using the PERT function:
-           ``tasks = [DesignBuilding(), PurchaseMaterials(), ConstructBuilding(), FinishInterior()]
+    You have identified the following tasks: **1.** Design the building, **2.** Purchase materials, **3.** Construct the building, 
+    and **4.** Finish the interior. You can estimate the time required to complete the project using the PERT function::
+           tasks = [DesignBuilding(), PurchaseMaterials(), ConstructBuilding(), FinishInterior()]
            optimistic_time, most_likely_time, pessimistic_time = pert(tasks)
            print('Optimistic Time:', optimistic_time)
            print('Most Likely Time:', most_likely_time)
-           print('Pessimistic Time:', pessimistic_time)``
-           
-           
+           print('Pessimistic Time:', pessimistic_time)
     """
     # Create a list to store the estimated times for each task
     estimated_time = []
