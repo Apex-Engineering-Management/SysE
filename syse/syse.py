@@ -281,13 +281,19 @@ def ipmt(rate, per, nper, pv, fv=0, when='end'):
         array_like, returns interest payment for each input element. If multiple inputs are array_like,
         they all must have the same shape.
         
+        
     See Also
     --------
     ppmt, pmt, pv
     
+
+
+    
     .. Note::
         The total payment is made up of payment against principal plus interest.
         ``pmt = ppmt + ipmt``
+        
+        
         
     Examples:
     ---------
@@ -312,21 +318,21 @@ def ipmt(rate, per, nper, pv, fv=0, when='end'):
     ::
         fmt = '{0:2d} {1:8.2f} {2:8.2f} {3:8.2f}'
         for payment in per:
-            index = payment - 1
-            principal = principal + ppmt[index]
-            print(fmt.format(payment, ppmt[index], ipmt[index], principal))
-            1  -200.58   -17.17  2299.42
-            2  -201.96   -15.79  2097.46
-            3  -203.35   -14.40  1894.11
-            4  -204.74   -13.01  1689.37
-            5  -206.15   -11.60  1483.22
-            6  -207.56   -10.18  1275.66
-            7  -208.99    -8.76  1066.67
-            8  -210.42    -7.32   856.25
-            9  -211.87    -5.88   644.38
-            10  -213.32    -4.42   431.05
-            11  -214.79    -2.96   216.26
-            12  -216.26    -1.49    -0.00
+        index = payment - 1
+        principal = principal + ppmt[index]
+        print(fmt.format(payment, ppmt[index], ipmt[index], principal))
+        1  -200.58   -17.17  2299.42
+        2  -201.96   -15.79  2097.46
+        3  -203.35   -14.40  1894.11
+        4  -204.74   -13.01  1689.37
+        5  -206.15   -11.60  1483.22
+        6  -207.56   -10.18  1275.66
+        7  -208.99    -8.76  1066.67
+        8  -210.42    -7.32   856.25
+        9  -211.87    -5.88   644.38
+        10  -213.32    -4.42   431.05
+        11  -214.79    -2.96   216.26
+        12  -216.26    -1.49    -0.00
         interestpd = np.sum(ipmt)
         np.round(interestpd, 2)
         -112.98
