@@ -1121,9 +1121,9 @@ def pert(tasks):
     
     Examples:
     ---------
-           You are working on a project to build a new office building.
-           You need to estimate the time required to complete the project.
-           You have identified the following tasks:
+    You are working on a project to build a new office building.
+    You need to estimate the time required to complete the project.
+    You have identified the following tasks:
     
            **1.** Design the building\n
            **2.** Purchase materials\n
@@ -1131,11 +1131,12 @@ def pert(tasks):
            **4.** Finish the interior
     
     Using the PERT method, you can estimate the time required to complete the project::
-        tasks = [DesignBuilding(), PurchaseMaterials(), ConstructBuilding(), FinishInterior()]
-        optimistic_time, most_likely_time, pessimistic_time = pert(tasks)
-        print('Optimistic Time:', optimistic_time)
-        print('Most Likely Time:', most_likely_time)
-        print('Pessimistic Time:', pessimistic_time)
+           tasks = [DesignBuilding(), PurchaseMaterials(), ConstructBuilding(), FinishInterior()]
+           optimistic_time, most_likely_time, pessimistic_time = pert(tasks)
+           print('Optimistic Time:', optimistic_time)
+           print('Most Likely Time:', most_likely_time)
+           print('Pessimistic Time:', pessimistic_time)
+           
     """
     # Create a list to store the estimated times for each task
     estimated_time = []
