@@ -1130,12 +1130,13 @@ def pert(tasks):
            **3.** Construct the building\n
            **4.** Finish the interior
     
-    Using the PERT method, you can estimate the time required to complete the project::
+    Using the PERT method, you can estimate the time required to complete the project using the PERT function::
            tasks = [DesignBuilding(), PurchaseMaterials(), ConstructBuilding(), FinishInterior()]
            optimistic_time, most_likely_time, pessimistic_time = pert(tasks)
            print('Optimistic Time:', optimistic_time)
            print('Most Likely Time:', most_likely_time)
            print('Pessimistic Time:', pessimistic_time)
+           
            
     """
     # Create a list to store the estimated times for each task
