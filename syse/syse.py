@@ -73,12 +73,12 @@ def fv(rate, nper, pmt, pv, when='end'):
     
     
     .. Note::
-    The future value is computed by solving the equation::
-           fv + 
-           pv*(1+rate)**nper +
-           pmt*(1 + rate*when)/rate*((1 + rate)**nper - 1) == 0
-        or, when ``rate == 0``::
-           fv + pv + pmt * nper == 0
+           The future value is computed by solving the equation::
+                      fv + 
+                      pv*(1+rate)**nper +
+                      pmt*(1 + rate*when)/rate*((1 + rate)**nper - 1) == 0
+           or, when ``rate == 0``::
+                      fv + pv + pmt * nper == 0
             
             
             
