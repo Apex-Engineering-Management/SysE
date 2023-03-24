@@ -1124,12 +1124,10 @@ def pert(tasks):
     You are working on a project to build a new office building.
     You need to estimate the time required to complete the project.
     You have identified the following tasks:
-    
            **1.** Design the building\n
            **2.** Purchase materials\n
            **3.** Construct the building\n
-           **4.** Finish the interior
-    
+           **4.** Finish the interior\n
     Using the PERT method, you can estimate the time required to complete the project using the PERT function::
            tasks = [DesignBuilding(), PurchaseMaterials(), ConstructBuilding(), FinishInterior()]
            optimistic_time, most_likely_time, pessimistic_time = pert(tasks)
