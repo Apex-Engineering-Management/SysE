@@ -303,14 +303,12 @@ def ipmt(rate, per, nper, pv, fv=0, when='end'):
         import numpy as np
         import syse as syse
         principal = 2500.00
-    The 'per' variable represents the periods of the loan.  Remember that
-    financial equations start the period count at 1!
+    The 'per' variable represents the periods of the loan. Remember that financial equations start the period count at 1!
     ::
         per = np.arange(1*12) + 1
         ipmt = syse.ipmt(0.0824/12, per, 1*12, principal)
         ppmt = syse.ppmt(0.0824/12, per, 1*12, principal)
-    Each element of the sum of the 'ipmt' and 'ppmt' arrays should equal
-    'pmt'.
+    Each element of the sum of the 'ipmt' and 'ppmt' arrays should equal 'pmt'.
     ::
         pmt = syse.pmt(0.0824/12, 1*12, principal)
         np.allclose(ipmt + ppmt, pmt)
