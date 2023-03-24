@@ -738,8 +738,8 @@ def depreciate(cost, salvage, life):
         float: depreciation amount
         
     .. Note::
-        The depreciation amount for each full year is the same amount: the original value of the asset B minus the
-        salvage value S all divided by the number of years N:
+        The depreciation amount for each full year is the same amount: 
+           the original value of the asset B minus the salvage value S all divided by the number of years N
         
     Examples:
     ---------
@@ -750,6 +750,7 @@ def depreciate(cost, salvage, life):
         syse.depreciate(cost, salvage, life)
         print("The straight-line depreciation for the machine is ${} per year.".format(depreciate))
         Output = The straight-line depreciation for the machine is $18,000 per year.
+        
     .. jupyter-execute::
         :hide-code:
         cost = 100000
@@ -1124,16 +1125,18 @@ def pert(tasks):
     You are working on a project to build a new office building.
     You need to estimate the time required to complete the project.
     You have identified the following tasks:
+    
            **1.** Design the building\n
            **2.** Purchase materials\n
            **3.** Construct the building\n
-           **4.** Finish the interior\n
-    Using the PERT method, you can estimate the time required to complete the project using the PERT function::
-           tasks = [DesignBuilding(), PurchaseMaterials(), ConstructBuilding(), FinishInterior()]
+           **4.** Finish the interior
+           
+    Using the PERT method, you can estimate the time required to complete the project using the PERT function:
+           ``tasks = [DesignBuilding(), PurchaseMaterials(), ConstructBuilding(), FinishInterior()]
            optimistic_time, most_likely_time, pessimistic_time = pert(tasks)
            print('Optimistic Time:', optimistic_time)
            print('Most Likely Time:', most_likely_time)
-           print('Pessimistic Time:', pessimistic_time)
+           print('Pessimistic Time:', pessimistic_time)``
            
            
     """
