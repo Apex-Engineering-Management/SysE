@@ -12,6 +12,7 @@ SysE covers common Industrial & Systems Engineering topics such as:
 * Engineering Management
 
 Some use cases include:
+
 *
 *
 
@@ -21,6 +22,9 @@ To get started, check out the docs for further information, including how to ins
 * **Documentation:** [SysE Docs](https://syse.readthedocs.io/en/latest/)
 * **Repository:** [SysE Repo](https://github.com/Apex-Engineering-Management/SysE)
 
-**Note:**
+**Notes:**
 
-This project is under active development.
+* This project is being worked on, but I am very busy. 
+* The depreciation functions will be fixed.
+* The linear optimization function is extremely limited, and will be worked on.
+* PERT will be fixed.
