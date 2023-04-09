@@ -1091,7 +1091,7 @@ def linear_pro(costs, budget):
         
     Examples:
     ---------
-    ::
+      ::
         costs = [1000, 2000, 3000]
         budget = 5000
         solution = syse.linear_pro(costs, budget)
