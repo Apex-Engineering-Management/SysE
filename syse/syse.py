@@ -47,7 +47,7 @@ def _convert_when(when):
 def fv(rate, nper, pmt, pv, when='end'):
     """
     Compute the future value.
-    
+
     Given:
      * a present value, `pv`
      * an interest `rate` compounded once per period, of which
@@ -58,7 +58,7 @@ def fv(rate, nper, pmt, pv, when='end'):
        (`when` = {'end', 0}) of each period
     Return:
        the value at the end of the `nper` periods
-       
+
     Parameters:
         rate (scalar or array_like of shape(M, )): Rate of interest as decimal (not per cent) per period
         nper (scalar or array_like of shape(M, )): Number of compounding periods
@@ -66,22 +66,22 @@ def fv(rate, nper, pmt, pv, when='end'):
         pv (scalar or array_like of shape(M, )): Present value
         when ({{'begin', 1}, {'end', 0}}, {string, int}, optional): When payments are due ('begin' (1) or 'end' (0)).
             Defaults to {'end', 0}.
-            
+
     Returns:
         ndarray: Future values. If all input is scalar, returns a scalar float. If any input is array_like, returns
         future values for each input element. If multiple inputs are array_like, they all must have the same shape.
-    
-    
+
+
     .. Note::
            The future value is computed by solving the equation::
-                      fv + 
+                      fv +
                       pv*(1+rate)**nper +
                       pmt*(1 + rate*when)/rate*((1 + rate)**nper - 1) == 0
            or, when ``rate == 0``::
                       fv + pv + pmt * nper == 0
-            
-            
-            
+
+
+
     Examples:
     ---------
     What is the future value after 10 years of saving $100 now, with
@@ -130,7 +130,7 @@ def fv(rate, nper, pmt, pv, when='end'):
 def pmt(rate, nper, pv, fv=0, when='end'):
     """
     Compute the payment against loan principal plus interest.
-    
+
     Given:
      * a present value, `pv` (e.g., an amount borrowed)
      * a future value, `fv` (e.g., 0)
@@ -142,20 +142,20 @@ def pmt(rate, nper, pv, fv=0, when='end'):
        (`when` = {'end', 0}) of each period
     Return:
        the (fixed) periodic payment.
-       
+
     Parameters:
         rate (array_like): Rate of interest (per period)
         nper (array_like): Number of compounding periods
         pv (array_like): Present value
         fv (array_like, optional): Future value (default = 0)
         when ({{'begin', 1}, {'end', 0}}, {string, int}): When payments are due ('begin' (1) or 'end' (0))
-        
+
     Returns:
     --------
         ndarray: Payment against loan plus interest. If all input is scalar, returns a scalar float. If any input is
         array_like, returns payment for each input element. If multiple inputs are array_like, they all must have
         the same shape.
-        
+
     .. Note::
         The payment is computed by solving the equation::
             fv +
@@ -170,7 +170,7 @@ def pmt(rate, nper, pv, fv=0, when='end'):
         future balance given an initial deposit, a fixed,
         periodically compounded interest rate, and the total
         number of periods.
-        
+
     Examples:
     ---------
     What is the monthly payment needed to pay off a $200,000 loan in 15
@@ -198,22 +198,22 @@ def pmt(rate, nper, pv, fv=0, when='end'):
 def nper(rate, pmt, pv, fv=0, when='end'):
     """
     Compute the number of periodic payments.
-    
+
     :class:`decimal.Decimal` type is not supported.
-    
+
     Parameters:
         rate (array_like): Rate of interest (per period)
         pmt (array_like): Payment
         pv (array_like): Present value
         fv (array_like, optional): Future value
         when ({{'begin', 1}, {'end', 0}}, {string, int}, optional): When payments are due ('begin' (1) or 'end' (0))
-        
+
     .. Note::
         The number of periods ``nper`` is computed by solving the equation::
             fv + pv*(1+rate)**nper + pmt*(1+rate*when)/rate*((1+rate)**nper-1) = 0
         but if ``rate = 0`` then::
             fv + pv + pmt*nper = 0
-            
+
     Examples:
     ---------
     If you only had $150/month to pay towards the loan, how long would it take
@@ -269,7 +269,7 @@ def _value_like(arr, value):
 def ipmt(rate, per, nper, pv, fv=0, when='end'):
     """
     Compute the interest portion of a payment.
-    
+
     Parameters:
         rate (scalar or array_like of shape(M, )): Rate of interest as decimal (not per cent) per period
         per (scalar or array_like of shape(M, )): Interest paid against the loan changes during the life or the loan.
@@ -279,26 +279,26 @@ def ipmt(rate, per, nper, pv, fv=0, when='end'):
         fv (scalar or array_like of shape(M, ), optional): Future value
         when ({{'begin', 1}, {'end', 0}}, {string, int}, optional): When payments are due ('begin' (1) or 'end' (0)).
             Defaults to {'end', 0}.
-            
+
     Returns:
         ndarray: Interest portion of payment. If all input is scalar, returns a scalar float. If any input is
         array_like, returns interest payment for each input element. If multiple inputs are array_like,
         they all must have the same shape.
-        
-        
+
+
     See Also
     --------
     ppmt, pmt, pv
-    
 
 
-    
+
+
     .. Note::
         The total payment is made up of payment against principal plus interest.
         ``pmt = ppmt + ipmt``
-        
-        
-        
+
+
+
     Examples:
     ---------
     What is the amortization schedule for a 1 year loan of $2500 at
@@ -381,7 +381,7 @@ def _rbl(rate, per, pmt, pv, when):
 def ppmt(rate, per, nper, pv, fv=0, when='end'):
     """
     Compute the payment against loan principal.
-    
+
     Parameters:
         rate (array_like): Rate of interest (per period)
         per (array_like, int): Amount paid against the loan changes. The `per` is the period of interest.
@@ -402,7 +402,7 @@ def ppmt(rate, per, nper, pv, fv=0, when='end'):
 def pv(rate, nper, pmt, fv=0, when='end'):
     """
     Compute the present value.
-    
+
     Given:
      * a future value, `fv`
      * an interest `rate` compounded once per period, of which
@@ -411,27 +411,27 @@ def pv(rate, nper, pmt, fv=0, when='end'):
      * a (fixed) payment, `pmt`, paid either
      * at the beginning (`when` = {'begin', 1}) or the end
        (`when` = {'end', 0}) of each period
-       
+
     Return:
        the value now
-       
+
     Parameters:
         rate (array_like): Rate of interest (per period)
         nper (array_like): Number of compounding periods
         pmt (array_like): Payment
         fv (array_like, optional): Future value
         when ({{'begin', 1}, {'end', 0}}, {string, int}, optional): When payments are due ('begin' (1) or 'end' (0))
-        
+
     Returns:
         ndarray, float: Present value of a series of payments or investments.
-        
+
     .. Note::
         The present value is computed by solving the equation::
             fv + pv*(1 + rate)**nper + pmt*(1 + rate*when)/rate*((1 + rate)**nper - 1) = 0
         or, when ``rate = 0``::
             fv + pv + pmt * nper = 0
         for `pv`, which is then returned.
-        
+
     Examples:
     ---------
     What is the present value (e.g., the initial investment)
@@ -493,7 +493,7 @@ def _g_div_gp(r, n, p, x, y, w):
 def rate(nper, pmt, pv, fv, when='end', guess=None, tol=None, maxiter=100):
     """
     Compute the rate of interest per period.
-    
+
     Parameters:
         nper (array_like): Number of compounding periods
         pmt (array_like): Payment
@@ -503,7 +503,7 @@ def rate(nper, pmt, pv, fv, when='end', guess=None, tol=None, maxiter=100):
         guess (Number, optional): Starting guess for solving the rate of interest, default 0.1
         tol (Number, optional): Required tolerance for the solution, default 1e-6
         maxiter (int, optional): Maximum iterations in finding the solution
-        
+
     .. Note::
         The rate of interest is computed by iteratively solving the
         (non-linear) equation::
@@ -551,9 +551,9 @@ def irr(values, guess=0.1, tol=1e-12, maxiter=100):
     This is the "average" periodically compounded rate of return
     that gives a net present value of 0.0; for a more complete explanation,
     see Notes below.
-    
+
     :class:`decimal.Decimal` type is not supported.
-    
+
     Parameters:
         values (array_like, shape(N,)): Input cash flows per time period. By convention, net "deposits" are negative
             and net "withdrawals" are positive. Thus, for example, at least the first element of `values`, which
@@ -562,10 +562,10 @@ def irr(values, guess=0.1, tol=1e-12, maxiter=100):
             guess of 0.1 (i.e. 10%) is assumed instead.
         tol (float, optional): Required tolerance to accept solution. Default is 1e-12.
         maxiter (int, optional): Maximum iterations to perform in finding a solution. Default is 100.
-        
+
     Returns:
         float: Internal Rate of Return for periodic input values.
-        
+
     .. Note::
         The IRR is perhaps best understood through an example (illustrated
         using np.irr in the Examples section below). Suppose one invests 100
@@ -583,7 +583,7 @@ def irr(values, guess=0.1, tol=1e-12, maxiter=100):
     irr is the solution of the equation: [G]_
     .. math::
         \\sum_{t=0}^M{\\frac{v_t}{(1+irr)^{t}}} = 0
-        
+
     Examples:
     ---------
     ::
@@ -640,7 +640,7 @@ def irr(values, guess=0.1, tol=1e-12, maxiter=100):
 def npv(rate, values):
     """
     Returns the NPV (Net Present Value) of a cash flow series.
-    
+
     Parameters:
         rate (scalar): The discount rate.
         values (array_like, shape(M, )): The values of the time series of cash flows. The (fixed) time interval
@@ -648,10 +648,10 @@ def npv(rate, values):
             then precise a year is understood to elapse between each cash flow event). By convention, investments or
             "deposits" are negative, income or "withdrawals" are positive; `values` must begin with the initial
             investment, thus `values[0]` will typically be negative.
-            
+
     Returns:
         float: The NPV of the input cash flow series `values` at the discount `rate`.
-        
+
     Warnings
     --------
     ``npv`` considers a series of cashflows starting in the present (t = 0).
@@ -660,12 +660,12 @@ def npv(rate, values):
     the first cashflow `values[0]` must be zeroed and added to the net
     present value of the future cashflows. This is demonstrated in the
     examples.
-    
+
     Notes
     -----
     Returns the result of: [G]_
     .. math:: \\sum_{t=0}^{M-1}{\\frac{values_t}{(1+rate)^{t}}}
-    
+
     Examples:
     ---------
     Consider a potential project with an initial investment of $40 000 and
@@ -702,13 +702,13 @@ def npv(rate, values):
 def mirr(values, finance_rate, reinvest_rate):
     """
     Modified internal rate of return.
-    
+
     Parameters:
         values (array_like): Cash flows (must contain at least one positive and one negative value) or nan is returned.
             The first value is considered a sunk cost at time zero.
         finance_rate (scalar): Interest rate paid on the cash flows
         reinvest_rate (scalar): Interest rate received on the cash flows upon reinvestment
-        
+
     Returns:
         float: Modified internal rate of return
     """
@@ -737,19 +737,19 @@ def mirr(values, finance_rate, reinvest_rate):
 def depreciate(cost, salvage, life):
     """
     Calculate the straight-line depreciation of an asset over time.
-    
+
     Parameters:
         cost: initial cost of the asset
         salvage: salvage value of the asset at the end of its useful life
         life: life of the asset in years
-        
+
     Returns:
         float: depreciation amount
-        
+
     .. Note::
-        The depreciation amount for each full year is the same amount: 
+        The depreciation amount for each full year is the same amount:
            the original value of the asset B minus the salvage value S all divided by the number of years N
-        
+
     Examples:
     ---------
     A company purchased a machine for $100,000 with an estimated salvage value of $10,000 after 5 years::
@@ -759,7 +759,7 @@ def depreciate(cost, salvage, life):
         syse.depreciate(cost, salvage, life)
         print("The straight-line depreciation for the machine is ${} per year.".format(depreciate))
         Output = The straight-line depreciation for the machine is $18,000 per year.
-        
+
     .. jupyter-execute::
         :hide-code:
         cost = 100000
@@ -774,42 +774,44 @@ def depreciate(cost, salvage, life):
 
 # Sum-of-Years-Digits Method:
 
-def digits(cost: float, salvage_value: float, useful_life: int) -> float:
+def digits(cost: np.ndarray, salvage_value: np.ndarray, useful_life: int) -> np.ndarray:
     """
     Compute the depreciation for an asset using the sum-of-years-digits method.
-    
+
     Parameters:
-        cost (float): The cost of the asset.
-        salvage_value (float): The salvage value of the asset.
+        cost (np.ndarray): The cost of the asset.
+        salvage_value (np.ndarray): The salvage value of the asset.
         useful_life (int): The useful life of the asset.
-        
+
     Returns:
-        float: The depreciation for the asset.
-        
+        np.ndarray: The depreciation for the asset.
+
     .. Note::
         The function takes as input the cost of the asset, the salvage_value of the asset at the end of its useful
         life, and the useful_life of the asset in years. It computes the depreciation for the asset using the
         sum-of-years-digits method, which assumes that the asset depreciates more rapidly in the earlier years of
         its life.
-        
+
     Examples:
     ---------
     Suppose a company purchases a machine for $60,000, with an expected salvage value of $6,000 after 6 years.
-    The company expects to use the machine for 6 years. We can compute the depreciation for the machine using the
-    digits function::
-        depreciation = syse.digits(cost=60000, salvage_value=6000, useful_life=6)
-        print(f"The annual depreciation for the machine is ${depreciation/6:.2f}.")
-        Output = The annual depreciation for the machine is $10333.33.
-    This means that the company can deduct $10,333.33 each year for 6 years as a depreciation expense for tax purposes.
-    At the end of 6 years, the book value of the machine will be $6,000, which is the expected salvage value.
+    The company expects to use the machine for 6 years. We can compute the accumulated depreciation for the machine
+    using the digits function::
+        cost= 60000
+        salvage_value= 6000
+        useful_life= 6
+        syse.digits(cost, salvage_value, useful_life)
+        Output = 54000
+    This means that the accumulated depreciation is $54,000 and the book value of the machine will be $6,000,
+    which is the expected salvage value.
     """
-    years = [i + 1 for i in range(useful_life)]
-    total_years = sum(years)
-    accumulated_depreciation = 0.0
+    years = np.array([i + 1 for i in range(useful_life)], dtype=np.float64)
+    total_years = np.sum(years)
+    accumulated_depreciation = np.zeros_like(cost, dtype=np.float64)
 
     for year in years:
         depreciation = (cost - salvage_value) * (useful_life - year + 1) / total_years
-        accumulated_depreciation += depreciation
+        accumulated_depreciation += depreciation.astype(np.float64)
 
     return accumulated_depreciation
 
@@ -819,22 +821,22 @@ def digits(cost: float, salvage_value: float, useful_life: int) -> float:
 def decline(cost: float, salvage_value: float, useful_life: int, rate: float) -> float:
     """
     Compute the depreciation for an asset using the declining balance method.
-    
+
     Parameters:
         cost (float): The cost of the asset.
         salvage_value (float): The salvage value of the asset.
         useful_life (int): The useful life of the asset.
         rate (float): The depreciation rate, expressed as a fraction of 1.
-        
+
     Returns:
         float: The depreciation for the asset.
-        
+
     .. Note::
         The function takes as input the cost of the asset, the salvage_value of the asset at the end of its useful
         life, the useful_life of the asset in years, and the rate of depreciation as a fraction of 1. It computes the
         depreciation for the asset using the declining balance method, which assumes that the asset depreciates by a
         fixed percentage of its remaining book value each year.
-        
+
     Examples:
     ---------
     Suppose a company purchases a delivery truck for $50,000, with an expected salvage value of $5,000 after 5 years.
@@ -865,22 +867,22 @@ def decline(cost: float, salvage_value: float, useful_life: int, rate: float) ->
 def double(cost: float, salvage_value: float, useful_life: int, rate: float) -> float:
     """
     Compute the depreciation for an asset using the double declining balance method.
-    
+
     Parameters:
         cost (float): The cost of the asset.
         salvage_value (float): The salvage value of the asset.
         useful_life (int): The useful life of the asset.
         rate (float): The depreciation rate, expressed as a fraction of 1.
-        
+
     Returns:
         float: The depreciation for the asset.
-        
+
     .. Note::
         The function takes the same inputs as the declining_balance_method function, but computes the depreciation
         using the double declining balance method. The double declining balance method assumes that the asset
         depreciates by a fixed percentage of its remaining book value each year, but that the rate of depreciation is
         twice the straight-line rate.
-        
+
     Examples:
     ---------
     Suppose a company purchases a printing press for $100,000, with an expected salvage value of $10,000 after 4 years.
@@ -909,46 +911,47 @@ def double(cost: float, salvage_value: float, useful_life: int, rate: float) -> 
 
 # Units of Production Method:
 
-def units(cost: float, salvage_value: float, useful_life: int, units_produced: int) -> float:
+def units(cost, salvage, expected_units_lifetime, production_t, t):
     """
-    Compute the depreciation for an asset using the units-of-production method.
-    
+    Calculate the units-of-production depreciation and book value at the end of year t.
+
     Parameters:
-        cost (float): The cost of the asset.
-        salvage_value (float): The salvage value of the asset.
-        useful_life (int): The useful life of the asset.
-        units_produced (int): The total units produced by the asset during its useful life.
-        
+        cost (float): The original cost of the asset
+        salvage (float): The estimated salvage value of the asset at the end of its useful life
+        expected_units_lifetime (float): The total expected number of units produced over the asset's lifetime
+        production_t (numpy array): A numpy array of units produced per year for t years
+        t (int): Number of years
+
     Returns:
-        float: The depreciation for the asset.
-        
-    .. Note::
-        The function takes as input the cost of the asset, the salvage_value of the asset at the end of its useful life,
-        the useful_life of the asset in years, and the total units_produced by the asset during its useful life.
-        It computes the depreciation for the asset using the units-of-production method, which assumes that the asset
-        depreciates in proportion to the number of units produced by the asset.
-        
+        float: Depreciation expense in year t
+        float: Book value at the end of year t
+
     Examples:
     ---------
-    Suppose a company purchases a printing press for $200,000, with an expected salvage value of $20,000 after
-    producing 1,000,000 pages. The company expects to produce 2,000,000 pages over the life of the printing press.
-    The company plans to use the printing press for 5 years. We can compute the depreciation for the printing press
-    using the units function::
-        depreciation = syse.units(cost=200000, salvage_value=20000, useful_life=5, units_produced=2000000)
-        print(f"The annual depreciation for the printing press is ${depreciation/5:.2f}.")
-        Output = The annual depreciation for the printing press is $32000.00.
-    This means that the company can deduct $32,000 each year for 5 years as a depreciation expense for tax purposes.
-    At the end of 5 years, the book value of the printing press will be $20,000, which is the expected salvage value.
+    On January 1, Miners, Inc. bought a backhoe for $500,000. They expect to use it for 5,000 hours, about 1,000 per
+    year for 5 years, before selling it for $100,000. What is the depreciation expense for the first year if they opt
+    for units-of-production method and used it for 1,500 hours?::
+        cost = 500000
+        salvage = 100000
+        expected_units_lifetime = 5000
+        production_t = np.array([1500])  # Only the first year's usage is given, so the array has one element
+        t = 1
+        # Calculate depreciation expense and book value for the first year
+        syse.units(cost, salvage, expected_units_lifetime, production_t, t)
+        Output = 120000.0
+
+
     """
-    total_units = units_produced
-    accumulated_depreciation = 0.0
+    # Calculate Depreciation per Unit
+    depreciation_per_unit = (cost - salvage) / expected_units_lifetime
+    # Calculate Depreciation Expense for each year
+    depreciation_expense_t = production_t * depreciation_per_unit
+    # Calculate accumulated depreciation
+    accumulated_depreciation = np.sum(depreciation_expense_t[:t])
+    # Calculate book value at the end of year t
+    book_value_t = cost - accumulated_depreciation
 
-    for year in range(1, useful_life + 1):
-        depreciation = (cost - salvage_value) * (units_produced / total_units)
-        accumulated_depreciation += depreciation
-        units_produced -= (units_produced / total_units)
-
-    return accumulated_depreciation
+    return depreciation_expense_t[t-1]
 
 
 # Probability & Statistics
@@ -959,14 +962,14 @@ def units(cost: float, salvage_value: float, useful_life: int, units_produced: i
 def sma(data, n):
     """
     Calculate the simple moving average of a list of data points for the most recent n periods.
-    
+
     Parameters:
         data (list): A list of data points.
         n (int): The number of most recent observations to be used.
-        
+
     Returns:
         float: The simple moving average.
-        
+
     Examples:
     ---------
     Suppose you are the owner of a retail store, and you want to analyze the sales performance of your store for the
@@ -988,14 +991,14 @@ def sma(data, n):
 def wma(data, weights):
     """
     Calculate the weighted moving average of a list of data points using a list of weights.
-    
+
     Parameters:
         data (list): A list of data points.
         weights (list): A list of weights to be applied to each data point.
-        
+
     Returns:
         float: The weighted moving average.
-        
+
     Examples:
     ---------
         Suppose you are a financial analyst, and you want to analyze the stock price of a company over the
@@ -1040,17 +1043,17 @@ def wma(data, weights):
 def line(x, y):
     """
     Calculate slope and intercept of the linear regression line that best fits the data.
-    
+
     Parameters:
         x: list of x-values
         y: list of y-values
-        
+
     Returns:
         tuple: (slope, intercept)
-        
+
     Notes
     -----
-    
+
     Examples:
     ---------
     """
@@ -1078,17 +1081,17 @@ def line(x, y):
 def linear_pro(costs, budget):
     """
     A Python function for linear programming. (Placeholder for a better function)
-    
+
     Parameters:
         costs : A list of costs associated with a project.
         budget : The total budget allocated to the project.
-        
+
     Returns:
         float: A list of the maximum values that can be allocated to each cost while staying within the budget.
-        
+
     .. Caution::
         This function seeks to **maximize** the values.
-        
+
     Examples:
     ---------
       ::
@@ -1122,44 +1125,44 @@ def linear_pro(costs, budget):
 
 # Program Evaluation Review Technique (PERT)
 
-def pert(tasks):
+def pert(*tasks):
     """
-    Calculate the amount of time it will take to realistically finish a project
-    
+    Calculate the expected time and standard deviation it will take to realistically finish a project using the PERT
+    estimate formula: (O +4M + P)/6
+
     Parameters:
-           tasks: list of estimated times for each task
-           
+           tasks: np.ndarray or list of estimated times for each task
+
     Returns:
-           float: optimistic
-           float: most likely
-           float: pessimistic time
-    
+           float: expected time
+           float: standard deviation
+
     Examples:
     ---------
     You are working on a project to build a new office building.
     You need to estimate the time required to complete the project.
-    You have identified the following tasks: **1.** Design the building, **2.** Purchase materials, **3.** Construct the building, 
+    You have identified the following tasks: **1.** Design the building, **2.** Purchase materials, **3.** Construct the building,
     and **4.** Finish the interior. You can estimate the time required to complete the project using the PERT function::
-           tasks = [DesignBuilding(), PurchaseMaterials(), ConstructBuilding(), FinishInterior()]
-           optimistic_time, most_likely_time, pessimistic_time = pert(tasks)
-           print('Optimistic Time:', optimistic_time)
-           print('Most Likely Time:', most_likely_time)
-           print('Pessimistic Time:', pessimistic_time)
+           # Define the tasks for each stage of the project
+           DesignBuilding = [60, 70, 100]
+           PurchaseMaterials = [60, 70, 100]
+           ConstructBuilding = [60, 70, 100]
+           FinishInterior = [60, 70, 100]
+           Output = ([73.33333333, 73.33333333, 73.33333333, 73.33333333]),
+                    [6.66666667, 6.66666667, 6.66666667, 6.66666667]))
     """
-    # Create a list to store the estimated times for each task
-    estimated_time = []
-    # Loop through each task
-    for task in tasks:
-        # Estimate the time required for the task
-        estimated_time.append(task.estimate_time())
-        # Calculate the optimistic time
-        optimistic_time = min(estimated_time)
-        # Calculate the most likely time
-        most_likely_time = sum(estimated_time) / len(estimated_time)
-        # Calculate the pessimistic time
-        pessimistic_time = max(estimated_time)
-        # Return the PERT values
-        return optimistic_time, most_likely_time, pessimistic_time
+    # Convert input to NumPy arrays
+    tasks = [np.array(task) for task in tasks]
+    # Extract the optimistic, most likely, and pessimistic times for each set of tasks
+    optimistic_time = [task[0] for task in tasks]
+    most_likely_time = [task[1] for task in tasks]
+    pessimistic_time = [task[2] for task in tasks]
+    # Calculate the expected time using the PERT formula
+    expected_time = (np.array(optimistic_time) + 4 * np.array(most_likely_time) + np.array(pessimistic_time)) / 6
+    # Calculate the standard deviation using the PERT formula
+    standard_deviation = (np.array(pessimistic_time) - np.array(optimistic_time)) / 6
+    # Return the expected time and standard deviation
+    return expected_time, standard_deviation
 
 
 # Network Analysis
@@ -1207,15 +1210,15 @@ def pert(tasks):
 def eoq(a: float, d: float, h: float) -> float:
     """
     Calculate the economic order quantity (EOQ) for an instantaneous replenishment inventory model.
-    
+
     Parameters:
         A (float): The cost to place one order.
         D (float): The number of units used per year.
         h (float): The holding cost per unit per year.
-        
+
     Returns:
         float: The EOQ that minimizes the total annual inventory cost.
-        
+
     Examples:
     ---------
     Let's say that a small business that sells specialty coffee beans uses an instantaneous replenishment
@@ -1238,16 +1241,16 @@ def eoq(a: float, d: float, h: float) -> float:
 def emq(a: float, d: float, h: float, r: float) -> float:
     """
     Calculate the economic manufacturing quantity (EMQ) for a finite replenishment rate inventory model.
-    
+
     Parameters:
         A (float): The cost to place one order.
         D (float): The number of units used per year.
         h (float): The holding cost per unit per year.
         R (float): The replenishment rate.
-        
+
     Returns:
         float: The EMQ that minimizes the total annual inventory cost.
-        
+
     .. Note::
         The EMQ formula assumes the same conditions as the EOQ formula
         (i.e., constant and known demand, no stockouts, constant and known ordering
@@ -1258,7 +1261,7 @@ def emq(a: float, d: float, h: float, r: float) -> float:
         Note that the formula assumes that the replenishment rate is given in
         units per day, and that the annual demand is normalized to units per
         day by dividing by 365.
-        
+
     Examples:
     ---------
     Let's say that a manufacturer produces widgets using a finite replenishment rate inventory model to manage its
@@ -1274,7 +1277,7 @@ def emq(a: float, d: float, h: float, r: float) -> float:
         emq = syse.emq(A, D, h, R)
         print(emq)
         Output = 514.29
-        
+
     .. Important::
         Again, note that this example is simplified and does not take into account other factors that could
         influence the manufacturer's decision-making, such as variability in demand and lead times, stockout costs, and
