@@ -89,6 +89,7 @@ def fv(rate, nper, pmt, pv, when='end'):
     ::
            import numpy as np
            import syse as syse
+           
            account_value = syse.fv(0.1,20,0,20000)
            print(f"Account Value = ${abs(account_value):,.2f}")
            Output = Account Value = $134,550.00
@@ -102,6 +103,7 @@ def fv(rate, nper, pmt, pv, when='end'):
     ::
            import numpy as np
            import syse as syse
+           
            ira_value = syse.fv(0.01,12*45,250,0)
            print(f"IRA Value = ${abs(Q5):,.2f}")
            Output = IRA Value = $5,363,673.26
