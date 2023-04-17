@@ -1103,6 +1103,7 @@ def linear_pro(costs, budget):
 
     Examples:
     ---------
+    Maximize the budget given the costs:
     ::
            costs = [1000, 2000, 3000]
            budget = 5000
