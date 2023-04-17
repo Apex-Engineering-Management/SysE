@@ -1134,8 +1134,8 @@ def pert(*tasks):
            tasks: np.ndarray or list of estimated times for each task
 
     Returns:
-           float: expected time
-           float: standard deviation
+           float: expected time & standard deviation
+       
 
     Examples:
     ---------
