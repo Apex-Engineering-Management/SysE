@@ -1152,18 +1152,21 @@ def pert(*tasks):
     You need to estimate the time required to complete the project.
     You have identified the following tasks:
     
-    `1. Design the building`\n
-    `2. Purchase materials`\n
-    `3. Construct the building`\n
-    `4. Finish the interior.` 
+               `1. Design the building`\n
+               `2. Purchase materials`\n
+               `3. Construct the building`\n
+               `4. Finish the interior.` 
     
-    You can estimate the time required to complete the project using the PERT function::
+    You can estimate the time required to complete the project using the PERT function
+    ::
            # Define the tasks for each stage of the project
            DesignBuilding = [60, 70, 100]
            PurchaseMaterials = [60, 70, 100]
            ConstructBuilding = [60, 70, 100]
            FinishInterior = [60, 70, 100]
+           
            syse.pert(DesignBuilding, PurchaseMaterials, ConstructBuilding, FinishInterior)
+           
            Output = ([73.33333333, 73.33333333, 73.33333333, 73.33333333]),
                     [6.66666667, 6.66666667, 6.66666667, 6.66666667]))
     """
