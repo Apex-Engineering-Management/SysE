@@ -588,10 +588,10 @@ def irr(values, guess=0.1, tol=1e-12, maxiter=100):
     ---------
     Stone Sour, Inc. has a project with the following cash flows:
     
-    `Year | Cash Flows ($)\n`
-    `0 | -30,000\n`
-   `1 | 18,500\n`
-    `2 | 10,200\n`
+    `Year | Cash Flows ($)`\n
+    `0 | -30,000`\n
+   `1 | 18,500`\n
+    `2 | 10,200`\n
     `3 | 9,200`
     
     The company evaluates all projects by applying the IRR Rule. If the appropriate interest rate is 9%, should the company accept this project?
