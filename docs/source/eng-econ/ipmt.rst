@@ -1,5 +1,5 @@
-Interest Portion of Payment (IPMT)
-==================================
+Interest Portion of Payment **(IPMT)**
+======================================
 
 .. currentmodule:: syse
 .. autosummary::
