@@ -1,5 +1,5 @@
-Economic Order Quantity (EOQ)
-=============================
+Economic Order Quantity **(EOQ)**
+=================================
 
 .. currentmodule:: syse
 .. autosummary::
