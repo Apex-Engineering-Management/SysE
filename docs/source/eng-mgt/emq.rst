@@ -1,5 +1,5 @@
-Economic Manufacturing Quantity (EMQ)
-======================================
+Economic Manufacturing Quantity **(EMQ)**
+=========================================
 
 
 .. currentmodule:: syse
