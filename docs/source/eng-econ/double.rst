@@ -1,5 +1,5 @@
-Double Declining Balance Method **(DOUBLE)**
-============================================
+Double Declining Balance Method (DOUBLE)
+========================================
 
 .. currentmodule:: syse
 .. autosummary::
