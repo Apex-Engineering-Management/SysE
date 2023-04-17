@@ -82,29 +82,29 @@ def fv(rate, nper, pmt, pv, when='end'):
 
 
 
-    Examples:
+    Example 1:
+    ---------
     You invest $20,000 in a retirement account and expect to earn a 10% annual return. How much do you expect to be in
     the account after 20 years?
-           ::
+    ::
+           import numpy as np
+           import syse as syse
+           account_value = syse.fv(0.1,20,0,20000)
+           print(f"Account Value = ${abs(account_value):,.2f}")
+           Output = Account Value = $134,550.00
     
-                   import numpy as np
-                   import syse as syse
-                   account_value = syse.fv(0.1,20,0,20000)
-                   print(f"Account Value = ${abs(account_value):,.2f}")
-                   Output = Account Value = $134,550.00
-        
-        
+    Example 2:
+    ----------
     You are planning for your retirement and will be investing $250/month into an IRA. You expect a monthly return of
     1% and are 45 years from your expected retirement date. Given this information, how much do you expect to be in your
     retirement account when you retire?
     ::
-    
         import numpy as np
         import syse as syse
         ira_value = syse.fv(0.01,12*45,250,0)
         print(f"IRA Value = ${abs(Q5):,.2f}")
         Output = IRA Value = $5,363,673.26
-    The IRA will have $5,363,673.26!
+
     """
     when = _convert_when(when)
     rate, nper, pmt, pv, when = np.broadcast_arrays(rate, nper, pmt, pv, when)
