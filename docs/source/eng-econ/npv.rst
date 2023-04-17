@@ -1,5 +1,5 @@
-Net Present Value (NPV)
-=======================
+Net Present Value **(NPV)**
+===========================
 
 
 .. currentmodule:: syse
