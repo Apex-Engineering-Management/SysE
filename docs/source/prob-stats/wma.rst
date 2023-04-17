@@ -1,5 +1,5 @@
-Weighted Moving Average (WMA)
-=============================
+Weighted Moving Average **(WMA)**
+=================================
 
 .. currentmodule:: syse
 .. autosummary::
