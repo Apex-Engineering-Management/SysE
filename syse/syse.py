@@ -93,6 +93,7 @@ def fv(rate, nper, pmt, pv, when='end'):
            print(f"Account Value = ${abs(account_value):,.2f}")
            Output = Account Value = $134,550.00
     
+    
     Example 2:
     ----------
     You are planning for your retirement and will be investing $250/month into an IRA. You expect a monthly return of
