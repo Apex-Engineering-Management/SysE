@@ -84,14 +84,23 @@ def fv(rate, nper, pmt, pv, when='end'):
 
     Examples:
     ---------
-    What is the future value after 10 years of saving $100 now, with
-    an additional monthly savings of $100.  Assume the interest rate is
-    5% (annually) compounded monthly?
+    You invest $20,000 in a retirement account and expect to earn a 10% annual return. How much do you expect to be in
+    the account after 20 years?
     ::
         import numpy as np
         import syse as syse
-        syse.fv(0.05/12, 10*12, -100, -100)
-        Output = 15692.928894335748
+        account_value = syse.fv(0.1,20,0,20000)
+        print(f"Account Value = ${abs(account_value):,.2f}")
+        Output = Account Value = $134,550.00
+    You are planning for your retirement and will be investing $250/month into an IRA. You expect a monthly return of
+    1% and are 45 years from your expected retirement date. Given this information, how much do you expect to be in your
+    retirement account when you retire?
+    ::
+        import numpy as np
+        import syse as syse
+        ira_value = syse.fv(0.01,12*45,250,0)
+        print(f"IRA Value = ${abs(Q5):,.2f}")
+        Output = IRA Value = $5,363,673.26
     """
     when = _convert_when(when)
     rate, nper, pmt, pv, when = np.broadcast_arrays(rate, nper, pmt, pv, when)
