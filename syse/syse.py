@@ -1103,12 +1103,12 @@ def linear_pro(costs, budget):
 
     Examples:
     ---------
-      ::
-        costs = [1000, 2000, 3000]
-        budget = 5000
-        solution = syse.linear_pro(costs, budget)
-        print(solution)
-        Output= [1000.0, 2000.0, 1000.0]
+    ::
+           costs = [1000, 2000, 3000]
+           budget = 5000
+           solution = syse.linear_pro(costs, budget)
+           print(solution)
+           Output= [1000.0, 2000.0, 1000.0]
     """
     # Initialize the solution list
     # Calculate the total of all costs
