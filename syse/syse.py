@@ -931,15 +931,15 @@ def units(cost, salvage, expected_units_lifetime, production_t, t):
     On January 1, Miners, Inc. bought a backhoe for $500,000. They expect to use it for 5,000 hours, about 1,000 per
     year for 5 years, before selling it for $100,000. What is the depreciation expense for the first year if they opt
     for units-of-production method and used it for 1,500 hours?
-           ::
-                   cost = 500000
-                   salvage = 100000
-                   expected_units_lifetime = 5000
-                   production_t = np.array([1500])  # Only the first year's usage is given, so the array has one element
-                   t = 1
-                   # Calculate depreciation expense and book value for the first year
-                   syse.units(cost, salvage, expected_units_lifetime, production_t, t)
-                   Output = 120000.0
+    ::
+           cost = 500000
+           salvage = 100000
+           expected_units_lifetime = 5000
+           production_t = np.array([1500])  # Only the first year's usage is given, so the array has one element
+           t = 1
+           # Calculate depreciation expense and book value for the first year
+           syse.units(cost, salvage, expected_units_lifetime, production_t, t)
+           Output = 120000.0
 
 
     """
