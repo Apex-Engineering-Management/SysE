@@ -3,7 +3,7 @@
 [![Documentation Status](https://readthedocs.org/projects/syse/badge/?version=latest)](https://syse.readthedocs.io/en/latest/?badge=latest)
 
 
-SysE (/Sis'y/) is a Python library for Systems Engineering.
+SysE is a Python library for Industrial and Systems Engineering.
 
 SysE covers common Industrial & Systems Engineering topics such as:
 * Engineering Economics 
