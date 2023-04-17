@@ -1,5 +1,5 @@
-Internal Rate of Return (IRR)
-=============================
+Internal Rate of Return **(IRR)**
+=================================
 
 
 .. currentmodule:: syse
