@@ -604,7 +604,8 @@ def irr(values, guess=0.1, tol=1e-12, maxiter=100):
            print(f"IRR = {IRR:.4f}")
            
            IRR = 0.1465
-
+    With a rate of 14.65% the company should accept this project because 14.65% is greater than the required cost of capital (COC) of 9%. 
+           
     """
     values = np.atleast_1d(values)
     if values.ndim != 1:
