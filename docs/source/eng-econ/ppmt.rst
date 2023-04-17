@@ -1,5 +1,5 @@
-Payment Against Loan Principal (PPMT)
-=====================================
+Payment Against Loan Principal **(PPMT)**
+=========================================
 
 .. currentmodule:: syse
 .. autosummary::
