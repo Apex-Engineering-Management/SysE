@@ -1,5 +1,5 @@
-Simple Linear Regression (LINE)
-===============================
+Simple Linear Regression **(LINE)**
+===================================
 
 .. currentmodule:: syse
 .. autosummary::
