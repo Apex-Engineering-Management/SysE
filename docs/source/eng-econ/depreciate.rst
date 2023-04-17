@@ -1,5 +1,5 @@
-Straight-Line Depreciation (DEPRECIATE)
-=======================================
+Straight-Line Depreciation **(DEPRECIATE)**
+===========================================
 
 .. currentmodule:: syse
 .. autosummary::
