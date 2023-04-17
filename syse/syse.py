@@ -436,7 +436,7 @@ def pv(rate, nper, pmt, fv=0, when='end'):
         num_coupons=19
         ytm=3.9
         current_price = syse.pv(0.039, 19, 45, 1000)
-        print(f"\n Current price = €{abs(current_price):,.2f}")
+        print(f"Current price = €{abs(current_price):,.2f}")
         Output = Current price = €1,079.48
 
     Gruber Corp. pays a constant $9 dividend on its stock. The company will maintain this dividend for the next 12
@@ -449,7 +449,7 @@ def pv(rate, nper, pmt, fv=0, when='end'):
         nper = 12
         pmt = 9
         share_price = syse.pv(0.10, 12, 9)
-        print(f"\n Share Price = ${abs(share_price):.2f}")
+        print(f"Share Price = ${abs(share_price):.2f}")
         Output = Share Price = $61.32
     """
     when = _convert_when(when)
