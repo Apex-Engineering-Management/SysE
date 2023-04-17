@@ -937,7 +937,7 @@ def units(cost, salvage, expected_units_lifetime, production_t, t):
            expected_units_lifetime = 5000
            production_t = np.array([1500])  # Only the first year's usage is given, so the array has one element
            t = 1
-           # Calculate depreciation expense and book value for the first year
+           # Calculate depreciation expense for the first year
            syse.units(cost, salvage, expected_units_lifetime, production_t, t)
            Output = 120000.0
 
