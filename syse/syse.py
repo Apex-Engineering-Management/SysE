@@ -100,11 +100,10 @@ def fv(rate, nper, pmt, pv, when='end'):
     You are planning for your retirement and will be investing $250/month into an IRA. You expect a monthly return of
     1% and are 45 years from your expected retirement date. Given this information, how much do you expect to be in your
     retirement account when you retire?
-    ::
-           
-           ira_value = syse.fv(0.01,12*45,250,0)
-           print(f"IRA Value = ${abs(Q5):,.2f}")
-           Output = IRA Value = $5,363,673.26
+           ::
+                      ira_value = syse.fv(0.01,12*45,250,0)
+                      print(f"IRA Value = ${abs(Q5):,.2f}")
+                      Output = IRA Value = $5,363,673.26
 
     """
     when = _convert_when(when)
