@@ -587,11 +587,13 @@ def irr(values, guess=0.1, tol=1e-12, maxiter=100):
     Example 1:
     ---------
     Stone Sour, Inc. has a project with the following cash flows:
-    Year | Cash Flows ($)
+    
+    `Year | Cash Flows ($)
     0 | -30,000
     1 | 18,500
     2 | 10,200
-    3 | 9,200
+    3 | 9,200`
+    
     The company evaluates all projects by applying the IRR Rule. If the appropriate interest rate is 9%, should the company accept this project?
     ::
            import numpy as np
