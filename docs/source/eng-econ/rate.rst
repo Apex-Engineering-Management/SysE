@@ -1,5 +1,5 @@
-Rate of Interest (RATE)
-========================
+Rate of Interest **(RATE)**
+===========================
 
 
 .. currentmodule:: syse
