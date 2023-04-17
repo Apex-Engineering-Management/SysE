@@ -1,4 +1,4 @@
-Sum-of-Years-Digits Method (DIGITS)
+Sum-of-Years-Digits Method **(DIGITS)**
 =======================================
 
 .. currentmodule:: syse
