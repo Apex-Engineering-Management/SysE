@@ -1148,6 +1148,7 @@ def pert(*tasks):
            PurchaseMaterials = [60, 70, 100]
            ConstructBuilding = [60, 70, 100]
            FinishInterior = [60, 70, 100]
+           syse.pert(DesignBuilding, PurchaseMaterials, ConstructBuilding, FinishInterior)
            Output = ([73.33333333, 73.33333333, 73.33333333, 73.33333333]),
                     [6.66666667, 6.66666667, 6.66666667, 6.66666667]))
     """
