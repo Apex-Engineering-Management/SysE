@@ -87,6 +87,7 @@ def fv(rate, nper, pmt, pv, when='end'):
     You invest $20,000 in a retirement account and expect to earn a 10% annual return. How much do you expect to be in
     the account after 20 years?
     ::
+    
         import numpy as np
         import syse as syse
         account_value = syse.fv(0.1,20,0,20000)
@@ -98,6 +99,7 @@ def fv(rate, nper, pmt, pv, when='end'):
     1% and are 45 years from your expected retirement date. Given this information, how much do you expect to be in your
     retirement account when you retire?
     ::
+    
         import numpy as np
         import syse as syse
         ira_value = syse.fv(0.01,12*45,250,0)
