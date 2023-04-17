@@ -1,5 +1,5 @@
-Simple Moving Average (SMA)
-===========================
+Simple Moving Average **(SMA)**
+===============================
 
 .. currentmodule:: syse
 .. autosummary::
