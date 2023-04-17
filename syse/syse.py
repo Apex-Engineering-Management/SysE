@@ -590,7 +590,7 @@ def irr(values, guess=0.1, tol=1e-12, maxiter=100):
     
     `Year | Cash Flows ($)`\n
     `0 | -30,000`\n
-   `1 | 18,500`\n
+    `1 | 18,500`\n
     `2 | 10,200`\n
     `3 | 9,200`
     
@@ -598,8 +598,11 @@ def irr(values, guess=0.1, tol=1e-12, maxiter=100):
     ::
            import numpy as np
            import syse as syse
+           
            IRR = syse.irr([-30000, 18500, 10200, 9200])
+           
            print(f"IRR = {IRR:.4f}")
+           
            IRR = 0.1465
 
     """
