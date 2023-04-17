@@ -92,14 +92,6 @@ def fv(rate, nper, pmt, pv, when='end'):
         import syse as syse
         syse.fv(0.05/12, 10*12, -100, -100)
         Output = 15692.928894335748
-    By convention, the negative sign represents cash flow out (i.e. money not
-    available today).  Thus, saving $100 a month at 5% annual interest leads
-    to $15,692.93 available to spend in 10 years.
-    If any input is array_like, returns an array of equal shape.  Let's
-    compare different interest rates from the example above::
-        a = np.array((0.05, 0.06, 0.07))/12
-        syse.fv(a, 10*12, -100, -100)
-        Output = array([ 15692.92889434,  16569.87435405,  17509.44688102]) # may vary
     """
     when = _convert_when(when)
     rate, nper, pmt, pv, when = np.broadcast_arrays(rate, nper, pmt, pv, when)
@@ -434,26 +426,31 @@ def pv(rate, nper, pmt, fv=0, when='end'):
 
     Examples:
     ---------
-    What is the present value (e.g., the initial investment)
-    of an investment that needs to total $15692.93
-    after 10 years of saving $100 every month?  Assume the
-    interest rate is 5% (annually) compounded monthly::
+    A German bond that pays annual coupons of 4.5%, has a par value of €1,000, and a YTM of 3.9%.
+    Assuming there are 19 years until maturity, what is the current price of this bond?
+    ::
         import numpy as np
         import syse as syse
-        syse.pv(0.05/12, 10*12, -100, 15692.93)
-        Output = -100.00067131625819
-    By convention, the negative sign represents cash flow out
-    (i.e., money not available today).  Thus, to end up with
-    $15,692.93 in 10 years saving $100 a month at 5% annual
-    interest, one's initial deposit should also be $100.
-    If any input is array_like, ``pv`` returns an array of equal shape.
-    Let's compare different interest rates in the example above::
-        a = np.array((0.05, 0.04, 0.03))/12
-        syse.pv(a, 10*12, -100, 15692.93)
-        array([ -100.00067132,  -649.26771385, -1273.78633713]) # may vary
-    So, to end up with the same $15692.93 under the same $100 per month
-    "savings plan," for annual interest rates of 4% and 3%, one would
-    need initial investments of $649.27 and $1273.79, respectively.
+        face_value=1000
+        coupon_value=4.5
+        num_coupons=19
+        ytm=3.9
+        current_price = syse.pv(0.039, 19, 45, 1000)
+        print(f"\n Current price = €{abs(current_price):,.2f}")
+        Output = Current price = €1,079.48
+
+    Gruber Corp. pays a constant $9 dividend on its stock. The company will maintain this dividend for the next 12
+    years and will then cease paying dividends forever (you should assume the company disappears with no extra payouts).
+    If the required return on this stock is 10%, what is the current share price?
+    ::
+        import numpy as np
+        import syse as syse
+        rate = 0.10
+        nper = 12
+        pmt = 9
+        share_price = syse.pv(0.10, 12, 9)
+        print(f"\n Share Price = ${abs(share_price):.2f}")
+        Output = Share Price = $61.32
     """
     when = _convert_when(when)
     (rate, nper, pmt, fv, when) = map(np.asarray, [rate, nper, pmt, fv, when])
