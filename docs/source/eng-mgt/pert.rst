@@ -1,5 +1,5 @@
-Program Evaluation Review Technique (PERT)
-==========================================
+Program Evaluation Review Technique **(PERT)**
+==============================================
 
 .. currentmodule:: syse
 .. autosummary::
