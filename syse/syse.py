@@ -583,38 +583,23 @@ def irr(values, guess=0.1, tol=1e-12, maxiter=100):
     Returns:
         float: Internal Rate of Return for periodic input values.
 
-    .. Note::
-        The IRR is perhaps best understood through an example (illustrated
-        using np.irr in the Examples section below). Suppose one invests 100
-        units and then makes the following withdrawals at regular (fixed)
-        intervals: 39, 59, 55, 20.  Assuming the ending value is 0, one's 100
-        unit investment yields 173 units; however, due to the combination of
-        compounding and the periodic withdrawals, the "average" rate of return
-        is neither simply 0.73/4 nor `(1.73)^(0.25-1)`.  Rather, it is the solution
-        (for :math:`r`) of the equation:
-    .. Math::
-        -100 + \\frac{39}{1+r} + \\frac{59}{(1+r)^2} + \\frac{55}{(1+r)^3} + \\frac{20}{(1+r)^4} = 0
-    .. code::
-       -100 + (39/1+r) = 0
-    In general, for `values` :math:`= [v_0, v_1, ... v_M]`,
-    irr is the solution of the equation: [G]_
-    .. math::
-        \\sum_{t=0}^M{\\frac{v_t}{(1+irr)^{t}}} = 0
 
-    Examples:
+    Example 1:
     ---------
+    Stone Sour, Inc. has a project with the following cash flows:
+    Year | Cash Flows ($)
+    0 | -30,000
+    1 | 18,500
+    2 | 10,200
+    3 | 9,200
+    The company evaluates all projects by applying the IRR Rule. If the appropriate interest rate is 9%, should the company accept this project?
     ::
-        import syse as syse
-        round(syse.irr([-100, 39, 59, 55, 20]), 5)
-        0.28095
-        round(syse.irr([-100, 0, 0, 74]), 5)
-        -0.0955
-        round(syse.irr([-100, 100, 0, -7]), 5)
-        -0.0833
-        round(syse.irr([-100, 100, 0, 7]), 5)
-        0.06206
-        round(syse.irr([-5, 10.5, 1, -8, 1]), 5)
-        0.0886
+           import numpy as np
+           import syse as syse
+           IRR = syse.irr([-30000, 18500, 10200, 9200])
+           print(f"IRR = {IRR:.4f}")
+           IRR = 0.1465
+
     """
     values = np.atleast_1d(values)
     if values.ndim != 1:
