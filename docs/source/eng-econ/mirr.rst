@@ -1,5 +1,5 @@
-Modified Internal Rate of Return (MIRR)
-=======================================
+Modified Internal Rate of Return **(MIRR)**
+===========================================
 
 
 .. currentmodule:: syse
