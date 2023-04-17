@@ -8,6 +8,3 @@ Overview
     line
 
 
-.. chart:: _static/charts/test.json
-
-    Plotly is in the game!
