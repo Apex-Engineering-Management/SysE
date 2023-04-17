@@ -11,10 +11,7 @@ SysE covers common Industrial & Systems Engineering topics such as:
 * Modeling & Quantitative Analysis
 * Engineering Management
 
-Some use cases include:
 
-*
-*
 
 To get started, check out the docs for further information, including how to install SysE and common use cases.
 
@@ -25,6 +22,6 @@ To get started, check out the docs for further information, including how to ins
 **Notes:**
 
 * This project is being worked on, but I am very busy. 
-* The depreciation functions will be fixed.
+* The declining depreciation functions will be fixed.
 * The linear optimization function is extremely limited, and will be worked on.
-* PERT will be fixed.
+* For the few functions that can't be called with scalars, arrays, or other sequences, there are plans to update them.
