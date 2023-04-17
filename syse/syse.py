@@ -1155,9 +1155,9 @@ def pert(*tasks):
                `1. Design the building`\n
                `2. Purchase materials`\n
                `3. Construct the building`\n
-               `4. Finish the interior.` 
+               `4. Finish the interior` 
     
-    You can estimate the time required to complete the project using the PERT function
+    You can estimate the time required to complete the project using the PERT function:
     ::
            # Define the tasks for each stage of the project
            DesignBuilding = [60, 70, 100]
