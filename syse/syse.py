@@ -826,18 +826,18 @@ def digits(cost: np.ndarray, salvage_value: np.ndarray, useful_life: int) -> np.
 
 # Declining Balance Method:
 
-def decline(cost: float, salvage_value: float, useful_life: int, rate: float) -> float:
+def decline(cost: np.ndarray, salvage_value: np.ndarray, useful_life: int, rate: float) -> np.ndarray:
     """
-    Compute the depreciation for an asset using the declining balance method.
+    Compute the accumulated depreciation for an asset using the declining balance method.
 
     Parameters:
-        cost (float): The cost of the asset.
-        salvage_value (float): The salvage value of the asset.
+        cost (np.ndarray): The cost of the asset.
+        salvage_value (np.ndarray): The salvage value of the asset.
         useful_life (int): The useful life of the asset.
         rate (float): The depreciation rate, expressed as a fraction of 1.
 
     Returns:
-        float: The depreciation for the asset.
+        np.ndarray: The depreciation for the asset.
 
     .. Note::
         The function takes as input the cost of the asset, the salvage_value of the asset at the end of its useful
@@ -850,40 +850,38 @@ def decline(cost: float, salvage_value: float, useful_life: int, rate: float) ->
     Suppose a company purchases a delivery truck for $50,000, with an expected salvage value of $5,000 after 5 years.
     The company expects to use the truck for 5 years. The depreciation rate for the truck is 30% per year using the
     declining balance method. We can compute the depreciation for the truck using the
-    decline function::
+    decline function
+    ::
         depreciation = syse.decline(cost=50000, salvage_value=5000, useful_life=5, rate=0.3)
-        print(f"The annual depreciation for the truck is ${depreciation/5:.2f}.")
-        Output = The annual depreciation for the truck is $10717.15.
-    This means that the company can deduct $10,717.15 each year for 5 years as a depreciation expense for tax purposes.
-    At the end of 5 years, the book value of the truck will be $5,000, which is the expected salvage value.
+        print(f"The accumulated depreciation for the truck is ${depreciation:.2f}.")
+        Output = The accumulated depreciation for the truck is $41,596.50
     """
-    accumulated_depreciation = 0.0
-    book_value = cost
+    accumulated_depreciation = np.zeros_like(cost, dtype=np.float64)
+    book_value = np.array(cost, dtype=np.float64)
 
     for year in range(1, useful_life + 1):
         depreciation = book_value * rate
-        if book_value - depreciation < salvage_value:
-            depreciation = book_value - salvage_value
-        accumulated_depreciation += depreciation
-        book_value -= depreciation
+        depreciation = np.minimum(depreciation, book_value - salvage_value)
+        accumulated_depreciation += depreciation.astype(np.float64)
+        book_value = (book_value - depreciation).astype(np.float64)
 
     return accumulated_depreciation
 
 
 # Double Declining Balance Method:
 
-def double(cost: float, salvage_value: float, useful_life: int, rate: float) -> float:
+def double(cost: np.ndarray, salvage_value: np.ndarray, useful_life: int, rate: float) -> np.ndarray:
     """
     Compute the depreciation for an asset using the double declining balance method.
 
     Parameters:
-        cost (float): The cost of the asset.
-        salvage_value (float): The salvage value of the asset.
+        cost (np.ndarray): The cost of the asset.
+        salvage_value (np.ndarray): The salvage value of the asset.
         useful_life (int): The useful life of the asset.
         rate (float): The depreciation rate, expressed as a fraction of 1.
 
     Returns:
-        float: The depreciation for the asset.
+        np.ndarray: The depreciation for the asset.
 
     .. Note::
         The function takes the same inputs as the declining_balance_method function, but computes the depreciation
@@ -896,21 +894,20 @@ def double(cost: float, salvage_value: float, useful_life: int, rate: float) -> 
     Suppose a company purchases a printing press for $100,000, with an expected salvage value of $10,000 after 4 years.
     The company expects to use the printing press for 4 years. The depreciation rate for the printing press is 50% per
     year using the double declining balance method. We can compute the depreciation for the printing press using the
-    double function::
+    double function
+    ::
         depreciation = syse.double(cost=100000, salvage_value=10000, useful_life=4, rate=0.5)
         print(f"The total depreciation for the printing press over 4 years is ${depreciation:.2f}.")
-        Output = The total depreciation for the printing press over 4 years is $102000.00.
-    This means that the company can deduct $102,000 as a depreciation expense over the 4-year life of the printing
+        Output = The total depreciation for the printing press over 4 years is $90,000.00.
+    This means that the company can deduct $90,000 as a depreciation expense over the 4-year life of the printing
     press for tax purposes. At the end of 4 years, the book value of the printing press will be $10,000, which is the
     expected salvage value.
     """
-    accumulated_depreciation = 0.0
-    book_value = cost
-
+    accumulated_depreciation = np.zeros_like(cost, dtype=np.float64)
+    book_value = np.array(cost, dtype=np.float64)  # Convert cost to numpy array and set dtype to float64
     for year in range(1, useful_life + 1):
-        depreciation = book_value * rate * 2
-        if book_value - depreciation < salvage_value:
-            depreciation = book_value - salvage_value
+        depreciation = book_value * (rate * 2) * 2
+        depreciation = np.minimum(depreciation, book_value - salvage_value)
         accumulated_depreciation += depreciation
         book_value -= depreciation
 
