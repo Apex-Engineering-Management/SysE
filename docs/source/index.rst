@@ -21,8 +21,6 @@ To get started, check out the :doc:`usage` section for further information, incl
 
 
 .. note::
-   - This project is being worked on, but I am very busy.
-   - The declining depreciation functions (decline & double) will be fixed.
    - The linear optimization function is extremely limited, and will be worked on.
    - For the few functions that can't be called with scalars, arrays, or other sequences, there are plans to update them.
 
