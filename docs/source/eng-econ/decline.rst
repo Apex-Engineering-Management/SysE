@@ -1,4 +1,4 @@
-Declining Balance Method (DECLINE)
+Declining Balance Method **(DECLINE)**
 =======================================
 
 .. currentmodule:: syse
