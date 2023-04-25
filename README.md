@@ -1,6 +1,6 @@
 # Welcome to the SysE Python Package!
 
-[![Documentation Status](https://readthedocs.org/projects/syse/badge/?version=latest)](https://syse.readthedocs.io/en/latest/?badge=latest) [![Downloads](https://static.pepy.tech/badge/syse)](https://pepy.tech/project/syse)
+[![Documentation Status](https://readthedocs.org/projects/syse/badge/?version=latest)](https://syse.readthedocs.io/en/latest/?badge=latest) [![Downloads](https://static.pepy.tech/personalized-badge/syse?period=total&units=none&left_color=black&right_color=red&left_text=Downloads)](https://pepy.tech/project/syse)
 
 SysE is a Python library for Industrial and Systems Engineering.
 
